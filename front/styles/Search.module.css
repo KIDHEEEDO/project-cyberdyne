@@ -1,0 +1,21 @@
+.form {
+    display: flex;
+    justify-content: center;
+}
+.input {
+    width: 530px;
+    height: 40px;
+    border: none;
+    padding: 0;
+    outline: none;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.button {
+    width: 65px;
+    margin-left: 5px;
+    height: 40px;
+    border: none;
+    border-radius: 15px;
+}

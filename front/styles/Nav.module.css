@@ -12,11 +12,11 @@
 }
 .navList {
     display: flex;
-    font-size: 15px !important;
+    font-size: 14px !important;
     justify-content: flex-end;
     align-items: center;
 }
 .nav li {
-    margin: 0 1.5rem;
+    margin: 0 1rem;
     display: flex;
 }
