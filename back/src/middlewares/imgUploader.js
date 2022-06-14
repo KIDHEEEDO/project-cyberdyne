@@ -19,6 +19,8 @@ const s3 = new AWS.S3({
     secretAccessKey: secretKey,
   },
 });
+
+//이미지 업로드
 const upload = multer({
   storage: multerS3({
     s3: s3,

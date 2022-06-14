@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 module.exports = function (sequelize, DataTypes) {
-  const Post = sequelize.define(
+  return sequelize.define(
     "posts",
     {
       post_id: {
@@ -11,7 +11,7 @@ module.exports = function (sequelize, DataTypes) {
         primaryKey: true,
       },
       title: {
-        type: DataTypes.STRING(255),
+        type: DataTypes.STRING,
         allowNull: false,
       },
       post_img: {
@@ -19,8 +19,16 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: true,
       },
       content: {
-        type: DataTypes.STRING(255),
+        type: DataTypes.STRING,
         allowNull: false,
+      },
+      user_id: {
+        type: DataTypes.UUID,
+        allowNull: false,
+        references: {
+          model: "users",
+          key: "user_id",
+        },
       },
     },
     {
@@ -37,5 +45,4 @@ module.exports = function (sequelize, DataTypes) {
       ],
     }
   );
-  return Post;
 };
