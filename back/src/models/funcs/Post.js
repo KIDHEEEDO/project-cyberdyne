@@ -34,6 +34,8 @@ const Post = {
   update: async ({ post_id, toUpdate }) => {
     const updatedPost = await postModel.update(toUpdate, {
       where: { post_id },
+      returning: true,
+      plain: true,
     });
     return updatedPost;
   },

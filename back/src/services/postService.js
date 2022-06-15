@@ -58,7 +58,7 @@ const postService = {
 
     const updatedPost = await Post.update({ post_id, toUpdate });
 
-    return { message: "success", data: updatedPost };
+    return { message: "success", data: updatedPost[1] };
   },
 
   deletePost: async ({ post_id }) => {
