@@ -9,8 +9,8 @@ DATA_OUT='/d/movomo/Downloads/dataset'
 
 # 이미지 저장을 위해 라벨은 그대로 두고 이미지만 640x640 크기로 조정합니다.
 python ./redux.py \
-    --image-src="$DATA_IN/Validation" \
-    --image-dst="$DATA_OUT/validation" \
+    --image-src="$DATA_IN/Training" \
+    --image-dst="$DATA_OUT/training" \
     --image-output-dimension=640x640 \
     --parallelize=mp
 

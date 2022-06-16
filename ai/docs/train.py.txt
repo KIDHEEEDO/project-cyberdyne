@@ -1,0 +1,84 @@
+Train a YOLOv5 model on a custom dataset.
+
+Models and datasets download automatically from the latest YOLOv5 release.
+Models: https://github.com/ultralytics/yolov5/tree/master/models
+Datasets: https://github.com/ultralytics/yolov5/tree/master/data
+Tutorial: https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data
+
+Usage:
+
+    $ python path/to/train.py \
+        --data coco128.yaml \
+        --weights yolov5s.pt \
+        --img 640  # from pretrained (RECOMMENDED)
+
+    $ python path/to/train.py \
+        --data coco128.yaml \
+        --weights '' \
+        --cfg yolov5s.yaml \
+        --img 640  # from scratch
+
+usage: train.py [-h] [--weights WEIGHTS] [--cfg CFG] [--data DATA] [--hyp HYP]
+                [--epochs EPOCHS] [--batch-size BATCH_SIZE] [--imgsz IMGSZ]
+                [--rect] [--resume [RESUME]] [--nosave] [--noval]
+                [--noautoanchor] [--noplots] [--evolve [EVOLVE]]
+                [--bucket BUCKET] [--cache [CACHE]] [--image-weights]
+                [--device DEVICE] [--multi-scale] [--single-cls]
+                [--optimizer {SGD,Adam,AdamW}] [--sync-bn] [--workers WORKERS]
+                [--project PROJECT] [--name NAME] [--exist-ok] [--quad]
+                [--cos-lr] [--label-smoothing LABEL_SMOOTHING]
+                [--patience PATIENCE] [--freeze FREEZE [FREEZE ...]]
+                [--save-period SAVE_PERIOD] [--local_rank LOCAL_RANK]
+                [--entity ENTITY] [--upload_dataset [UPLOAD_DATASET]]
+                [--bbox_interval BBOX_INTERVAL]
+                [--artifact_alias ARTIFACT_ALIAS]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --weights WEIGHTS     initial weights path
+  --cfg CFG             model.yaml path
+  --data DATA           dataset.yaml path
+  --hyp HYP             hyperparameters path
+  --epochs EPOCHS
+  --batch-size BATCH_SIZE
+                        total batch size for all GPUs, -1 for autobatch
+  --imgsz IMGSZ, --img IMGSZ, --img-size IMGSZ
+                        train, val image size (pixels)
+  --rect                rectangular training
+  --resume [RESUME]     resume most recent training
+  --nosave              only save final checkpoint
+  --noval               only validate final epoch
+  --noautoanchor        disable AutoAnchor
+  --noplots             save no plot files
+  --evolve [EVOLVE]     evolve hyperparameters for x generations
+  --bucket BUCKET       gsutil bucket
+  --cache [CACHE]       --cache images in "ram" (default) or "disk"
+  --image-weights       use weighted image selection for training
+  --device DEVICE       cuda device, i.e. 0 or 0,1,2,3 or cpu
+  --multi-scale         vary img-size +/- 50%
+  --single-cls          train multi-class data as single-class
+  --optimizer {SGD,Adam,AdamW}
+                        optimizer
+  --sync-bn             use SyncBatchNorm, only available in DDP mode
+  --workers WORKERS     max dataloader workers (per RANK in DDP mode)
+  --project PROJECT     save to project/name
+  --name NAME           save to project/name
+  --exist-ok            existing project/name ok, do not increment
+  --quad                quad dataloader
+  --cos-lr              cosine LR scheduler
+  --label-smoothing LABEL_SMOOTHING
+                        Label smoothing epsilon
+  --patience PATIENCE   EarlyStopping patience (epochs without improvement)
+  --freeze FREEZE [FREEZE ...]
+                        Freeze layers: backbone=10, first3=0 1 2
+  --save-period SAVE_PERIOD
+                        Save checkpoint every x epochs (disabled if < 1)
+  --local_rank LOCAL_RANK
+                        DDP parameter, do not modify
+  --entity ENTITY       W&B: Entity
+  --upload_dataset [UPLOAD_DATASET]
+                        W&B: Upload data, "val" option
+  --bbox_interval BBOX_INTERVAL
+                        W&B: Set bounding-box image logging interval
+  --artifact_alias ARTIFACT_ALIAS
+                        W&B: Version of dataset artifact to use
