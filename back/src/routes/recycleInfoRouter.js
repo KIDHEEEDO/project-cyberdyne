@@ -9,12 +9,11 @@ recycleInfoRouter.post("/info", async (req, res, next) => {
     //사용자의 이미지
     const { img } = req.body;
 
-    //안내할 분리배출 방법 정보
-    const recycleInfo = await recycleInfoService.passImg({
-      img,
-    });
-
-    res.status(201).json(recycleInfo);
+    const info = await recycleInfoService.analysisImg({ encoded });
+    //인공지능 영역에서 디코딩 후, 분석
+    // const decode = Buffer.from(encode, "base64");
+    //
+    res.status(201).json(info);
   } catch (error) {
     next(error);
   }
