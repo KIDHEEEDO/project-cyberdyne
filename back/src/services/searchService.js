@@ -9,6 +9,7 @@ const searchService = {
     searchedData.map((info) =>
       recycleInfo.push({ details: info.details, info_img: info.info_img })
     );
+    //data
     return { message: "success", data: { category, recycleInfo } };
   },
 };
