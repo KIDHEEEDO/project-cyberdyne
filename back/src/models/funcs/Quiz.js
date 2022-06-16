@@ -8,7 +8,10 @@ const Quiz = {
     },
 
     findById: async (number) => {
-        const quiz = await quizModel.findOne({ where: { quiz_id: number } });
+        const quiz = await quizModel.findOne({
+            attributes: { exclude: ["quiz_id"] },
+            where: { quiz_id: number },
+        });
         return quiz;
     },
 };
