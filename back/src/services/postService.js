@@ -4,7 +4,7 @@ const postService = {
   createPost: async ({ title, post_img, content }) => {
     const newPost = { title, post_img, content };
     const createdNewPost = await Post.create({ newPost });
-
+    //
     return { message: "success", data: createdNewPost };
   },
 
