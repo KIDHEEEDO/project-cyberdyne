@@ -1,0 +1,22 @@
+.nav {
+    padding: 1rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+.nav ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+.navList {
+    display: flex;
+    font-size: 14px !important;
+    justify-content: flex-end;
+    align-items: center;
+}
+.nav li {
+    margin: 0 1rem;
+    display: flex;
+}

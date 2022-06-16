@@ -1,0 +1,12 @@
+# dependency
+.venv
+node_modules
+
+# config
+.vscode
+
+# security
+.env
+
+# excel lock file
+~$*

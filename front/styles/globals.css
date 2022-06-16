@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
+@import url(//font.elice.io/EliceDigitalBaeum.css);
+
+:root {
+    --green: #a7c4bc;
+    --gray: #f2f2f2;
+    --deepgreen: #305e63;
+    --deepgray: #dedede;
+
+    --font-title: 2.5rem;
+    --font-subtitle: 1.8rem;
+    --font-text: 1.2rem;
+}
+
+html,
+body {
+    /* width: 960px; */
+    padding: 0;
+    margin: 0;
+    font-family: Elice Digital Baeum, -apple-system, BlinkMacSystemFont,
+        Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+        Helvetica Neue, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}

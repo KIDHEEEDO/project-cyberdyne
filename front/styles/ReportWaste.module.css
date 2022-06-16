@@ -1,0 +1,45 @@
+.mapform_wrapper {
+    width: 100%;
+    height: 1100px;
+    background-color: var(--gray);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.mapform {
+    width: 800px;
+    height: 650px;
+    background-color: var(--deepgray);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.mapform_title {
+    width: 100%;
+    height: 70px;
+    margin: 0;
+    padding-top: 15px;
+    background-color: var(--green);
+    text-align: center;
+}
+
+.mapform_text {
+    white-space: pre-wrap;
+    text-align: center;
+}
+
+.map {
+    width: 720px;
+    height: 420px;
+}
+
+.input_wrapper {
+    width: 650px;
+    display: flex;
+    justify-content: space-between;
+}

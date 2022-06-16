@@ -1,0 +1,86 @@
+.wrapper {
+    background: #f2f2f2;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 0;
+}
+
+.mainTitle {
+    display: flex;
+    align-items: flex-end;
+}
+.carouselWrapper {
+    display: flex;
+    align-items: center;
+}
+.carouselAll {
+    width: 600px;
+    height: 500px;
+    border-radius: 15px;
+    margin: 8px 8px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #a7c4bc;
+    word-break: keep-all;
+}
+.slide {
+    width: 550px;
+    height: 500px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity ease-in-out 0.01s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.activeAnim {
+    opacity: 1;
+    width: 550px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.infoBox {
+    height: 80%;
+}
+.arrowButton {
+    border: none;
+    height: 50px;
+    cursor: pointer;
+}
+.prevArrow {
+    transform: scaleX(-1);
+}
+.buttonWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button {
+    border: none;
+    cursor: pointer;
+    width: 190px;
+    height: 50px;
+    margin: 18px 6px;
+    background-color: #dedede;
+    border-radius: 15px;
+}
+.pointButton {
+    display: flex;
+    border: none;
+    cursor: pointer;
+    width: 190px;
+    height: 50px;
+    margin: 18px 6px;
+    background-color: #dedede;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+}
