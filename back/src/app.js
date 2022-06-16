@@ -5,7 +5,6 @@ const errorMiddleware = require("./middlewares/errorMiddleware.js");
 const recycleInfoRouter = require("./routes/recycleInfoRouter");
 const userRouter = require("./routes/userRouter");
 const postRouter = require("./routes/postRouter");
-const searchRouter = require("./routes/searchRouter");
 const imgUploadRouter = require("./routes/imgUploadRouter");
 const pointRouter = require("./routes/pointRouter");
 const quizRouter = require("./routes/quizRouter");
@@ -28,10 +27,9 @@ app.get("/", (req, res) => {
   res.send("Hello, world!!!");
 });
 //recycle : 분리배출 방법 관련
-app.use("/recycle-info", recycleInfoRouter);
+app.use("/recycle", recycleInfoRouter);
 app.use("/post", postRouter);
 app.use("/upload", imgUploadRouter);
-app.use("/search", searchRouter);
 app.use("/users", userRouter);
 app.use("/points", pointRouter);
 app.use("/quizs", quizRouter);

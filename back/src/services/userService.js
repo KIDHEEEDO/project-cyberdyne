@@ -27,7 +27,7 @@ const userService = {
             register_date: registerDate,
         };
 
-        const createdNewUser = await User.create({ newUser });
+        await User.create({ newUser });
         const data = {
             userId,
             nickname,
@@ -60,7 +60,7 @@ const userService = {
         } else {
             const today = new Date();
             // 최근 로그인 날짜를 업데이트해줌
-            toUpdate = { last_login: today };
+            const toUpdate = { last_login: today };
             await User.update({ user_id: user.user_id, toUpdate });
         }
 
