@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
   res.send("Hello, world!!!");
 });
 //recycle : 분리배출 방법 관련
-app.use("/recycle", recycleInfoRouter);
+app.use("/recycle-info", recycleInfoRouter);
 app.use("/post", postRouter);
 app.use("/upload", imgUploadRouter);
 app.use("/users", userRouter);
