@@ -2,7 +2,7 @@ const imgUploadRouter = require("express").Router();
 const upload = require("../middlewares/imgUploader.js");
 
 imgUploadRouter.post(
-  "/postImg",
+  "/post-img",
   upload.array("image"),
   async (req, res, next) => {
     try {

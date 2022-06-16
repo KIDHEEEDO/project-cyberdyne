@@ -5,19 +5,22 @@ const path = require("path");
 const dotenv = require("dotenv");
 dotenv.config();
 
+const {
+  REGION: region,
+  AWS_ACCESS_KEY: accessKey,
+  AWS_SECRET_KEY: secretKey,
+} = process.env;
+
 const bucket = "team9-cyberdyne";
-
-const region = process.env.REGION;
-const access_key = process.env.AWS_ACCESS_KEY;
-const secret_key = process.env.AWS_SECRET_KEY;
-
 const s3 = new AWS.S3({
   region: region,
   credentials: {
-    accessKeyId: access_key,
-    secretAccessKey: secret_key,
+    accessKeyId: accessKey,
+    secretAccessKey: secretKey,
   },
 });
+
+//이미지 업로드
 const upload = multer({
   storage: multerS3({
     s3: s3,
