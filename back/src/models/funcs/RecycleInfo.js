@@ -28,6 +28,19 @@ const RecycleInfo = {
 
     return infos[0];
   },
+
+  searchData: async ({ text }) => {
+    const searchedData = await sequelize.query(
+      `SELECT recycle_categories.category, recycle_infos.details, recycle_infos.info_img
+      FROM recycle_infos
+      INNER JOIN recycle_categories 
+      ON recycle_infos.code=recycle_categories.code
+      WHERE related_item like '%${text}%'
+      `
+    );
+
+    return searchedData[0];
+  },
 };
 
 module.exports = RecycleInfo;
