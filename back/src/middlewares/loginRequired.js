@@ -2,11 +2,11 @@ const jwt = require("jsonwebtoken");
 
 const loginRequired = (req, res, next) => {
     // request 헤더로부터 authorization bearer 토큰을 받음.
-    const userToken = req.headers["authorization"]?.split(" ")[1] ?? "null";
+    const userToken = req.headers["authorization"]?.split(" ")[1] ?? null;
 
     // 이 토큰은 jwt 토큰 문자열이거나, 혹은 "null" 문자열임.
     // 토큰이 "null" 일 경우, loginRequired 가 필요한 서비스 사용을 제한함.
-    if (userToken === "null") {
+    if (!userToken) {
         if (!process.env.development) {
             console.log(
                 "서비스 사용 요청이 있습니다.하지만, Authorization 토큰: 없음"

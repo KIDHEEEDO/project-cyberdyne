@@ -55,7 +55,7 @@ userRouter.get("/:userId/myPage", loginRequired, async (req, res, next) => {
     }
 });
 
-userRouter.put("/:userId/profile", loginRequired, async (req, res, next) => {
+userRouter.patch("/:userId/profile", loginRequired, async (req, res, next) => {
     try {
         // URI로부터 사용자 id를 추출함.
         const loginId = req.currentUserId;
@@ -78,7 +78,7 @@ userRouter.put("/:userId/profile", loginRequired, async (req, res, next) => {
     }
 });
 
-userRouter.put(
+userRouter.patch(
     "/:userId/password",
     loginRequired,
     body("password")

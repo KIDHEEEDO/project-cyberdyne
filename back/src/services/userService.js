@@ -27,7 +27,7 @@ const userService = {
             register_date: registerDate,
         };
 
-        const createdNewUser = await User.create({ newUser });
+        await User.create({ newUser });
         const data = {
             userId,
             nickname,
@@ -60,7 +60,7 @@ const userService = {
         } else {
             const today = new Date();
             // 최근 로그인 날짜를 업데이트해줌
-            toUpdate = { last_login: today };
+            const toUpdate = { last_login: today };
             await User.update({ user_id: user.user_id, toUpdate });
         }
 
@@ -88,20 +88,20 @@ const userService = {
             );
         }
 
-        const { nickname, picture } = user;
+        const { email, nickname, picture } = user;
 
         // 랭커들의 user_id, nickname, total_point
         const rankers = await Point.getRankers();
         // 현 사용자의 total_point와 rank
         const rank = await Point.getRank({ user_id: userId });
 
-        const data = { nickname, picture, rankers, rank };
+        const data = { email, nickname, picture, rankers, rank };
 
         return { message: "success", data };
     },
 
     updateProfile: async ({ userId, updateData }) => {
-        let user = await User.findById({ user_id: userId });
+        const user = await User.findById({ user_id: userId });
 
         if (!user) {
             throw new Error(
@@ -112,12 +112,12 @@ const userService = {
         // 기존 값과 비교해서 달라진 값만 수정
         const toUpdate = setUtil.compareValues(updateData, user);
 
-        user = await User.update({ user_id: userId, toUpdate });
-        return { message: "success", data: user };
+        const data = await User.update({ user_id: userId, toUpdate });
+        return { message: "success", data };
     },
 
     updatePassword: async ({ userId, password }) => {
-        let user = await User.findById({ user_id: userId });
+        const user = await User.findById({ user_id: userId });
 
         if (!user) {
             throw new Error(
@@ -128,8 +128,8 @@ const userService = {
         const hashedPassword = await bcrypt.hash(password, 10);
         const toUpdate = { password: hashedPassword };
 
-        user = await User.update({ user_id: userId, toUpdate });
-        return { message: "success", data: user };
+        const data = await User.update({ user_id: userId, toUpdate });
+        return { message: "success", data };
     },
 
     deleteUser: async ({ userId }) => {

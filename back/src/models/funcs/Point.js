@@ -14,24 +14,28 @@ const Point = {
 
     findByFilter: async ({ user_id, route, today }) => {
         const point = await pointModel.findOne({
+            attributes: ["point"],
             where: { user_id, route, raised_at: { [Op.gt]: today } },
         });
         return point;
     },
 
     findAllById: async ({ user_id }) => {
-        const points = await pointModel.findAll({ where: { user_id } });
+        const points = await pointModel.findAll({
+            attributes: ["route", "point", ["raised_at", "raisedAt"]],
+            where: { user_id },
+        });
         return points;
     },
 
     getRankers: async () => {
         const rankerPoints = await sequelize.query(
-            `SELECT points.user_id, users.nickname, SUM(point) TOTAL_POINT 
-            FROM points 
-            INNER JOIN users 
-            ON points.user_id=users.user_id 
-            GROUP BY points.user_id, users.user_id 
-            ORDER BY total_point DESC 
+            `SELECT u.nickname, SUM(point) TOTAL
+            FROM points AS p
+            INNER JOIN users AS u
+            ON p.user_id=u.user_id 
+            GROUP BY p.user_id, u.user_id 
+            ORDER BY total DESC 
             LIMIT 3`
         );
         return rankerPoints[0];
@@ -39,11 +43,11 @@ const Point = {
 
     getRank: async ({ user_id }) => {
         const rank = await sequelize.query(
-            `SELECT total_point, rank 
+            `SELECT total, rank 
             FROM (
-                SELECT user_id, total_point, RANK() OVER (ORDER BY total_point DESC) RANK 
+                SELECT user_id, total, RANK() OVER (ORDER BY total DESC) RANK 
                 FROM (
-                    SELECT user_id, SUM(point) AS total_point 
+                    SELECT user_id, SUM(point) AS total 
                     FROM points 
                     GROUP BY user_id) AS new_points
                 ) AS final_points 

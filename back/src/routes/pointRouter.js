@@ -19,7 +19,6 @@ pointRouter.get("/", loginRequired, async (req, res, next) => {
     try {
         const userId = req.currentUserId;
         const route = req.query.route;
-        console.log(route);
 
         const point = await pointService.checkPoint({ userId, route });
 

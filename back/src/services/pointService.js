@@ -5,7 +5,8 @@ const pointService = {
         const today = new Date();
         const newPoint = { user_id: userId, route, point, raised_at: today };
         const createdNewPoint = await Point.create({ newPoint });
-        return { message: "success", data: createdNewPoint };
+        const data = { route, point, raisedAt: createdNewPoint.raised_at };
+        return { message: "success", data };
     },
 
     checkPoint: async ({ userId, route }) => {
