@@ -1,6 +1,6 @@
 import React from "react";
-import ImageUpload from "../../components/recycling/ImageUpload";
-import Search from "../../components/recycling/Search";
+import ImageUpload from "../../components/shared/ImageUpload";
+import Search from "../../components/shared/Search";
 
 const aiSearcher = () => {
     return (
@@ -27,7 +27,7 @@ const aiSearcher = () => {
                     캔, 병, 과자봉지 등 사물 다 상관없어요. <br />
                     무엇이든 분리배출 방법을 알려드려요.
                 </p>
-                <ImageUpload />
+                <ImageUpload width={600} height={350} />
             </div>
 
             <div

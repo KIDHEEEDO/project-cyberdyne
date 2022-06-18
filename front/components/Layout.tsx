@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import Head from "next/Head";
+import styled from "styled-components";
 
 type AppLayoutProps = {
     children: React.ReactNode;

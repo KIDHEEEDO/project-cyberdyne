@@ -1,6 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
-@import url(//font.elice.io/EliceDigitalBaeum.css);
-
 :root {
     --green: #a7c4bc;
     --gray: #f2f2f2;
@@ -10,6 +7,8 @@
     --font-title: 2.5rem;
     --font-subtitle: 1.8rem;
     --font-text: 1.2rem;
+
+    --nav-height: 60px;
 }
 
 html,

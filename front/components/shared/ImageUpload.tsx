@@ -1,10 +1,16 @@
 import React from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import uploadingImage from "../../public/image.upload.png";
-import imgUploadStyles from "../../styles/ImgUpload.module.css";
+import styled from "styled-components";
+import uploadingImage from "../../public/images/image.upload.png";
+import { sendImageFile } from "../../api";
 
-const ImageUpload = () => {
+type ImageUploadProps = {
+    width?: number;
+    height?: number;
+};
+
+const ImageUpload = ({ width, height }: ImageUploadProps) => {
     const router = useRouter(); // 페이지 이동을 위해 useRouter 적용
     const dragOver = (e: React.DragEvent<HTMLDivElement>) => {
         e.preventDefault();
@@ -33,26 +39,30 @@ const ImageUpload = () => {
 
     // 서버에 이미지를 보내는 함수
     const sendImage = async (file: Blob) => {
-        console.log(file);
+        // console.log(file);
         const formData = new FormData();
-        formData.append("file", file);
-        console.log(formData.getAll("file")); // formData에 잘 들어가는지 확인
+        formData.append("image", file);
+        // console.log(formData.getAll("image")); // formData에 잘 들어가는지 확인
         // const res = await --> 이 후 서버에 post로 해당 formData와 같이 보낼 예정
         // 로딩 중 모션 적용 필요!!!!
-        await router.push("/recycling/recycleInfo"); // 정보 페이지로 routing
+        const res = await sendImageFile("recycle-info", formData);
+        const info = res.data.data;
+        localStorage.setItem(
+            `${info.category}`,
+            JSON.stringify(info.recycleInfo)
+        );
+
+        await router.push(
+            `/recycling/recycleInfo/?category=${info.category}`,
+            "/recycling/recycleInfo/"
+        ); // 정보 페이지로 routing
     };
 
     return (
-        <div
-            className="container"
-            style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-            }}
-        >
-            <div
-                className={imgUploadStyles.dragImage}
+        <Wrapper>
+            <DragImage
+                width={width}
+                height={height}
                 onDragOver={dragOver}
                 onDragEnter={dragEnter}
                 onDragLeave={dragLeave}
@@ -65,14 +75,9 @@ const ImageUpload = () => {
                     height={40}
                 />
                 <p>이미지를 넣어주세요!</p>
-            </div>
+            </DragImage>
             <div>
-                <label
-                    htmlFor="input-file"
-                    className={imgUploadStyles.inputLabel}
-                >
-                    사진 업로드
-                </label>
+                <InputLabel htmlFor="input-file">사진 업로드</InputLabel>
                 <input
                     type="file"
                     id="input-file"
@@ -81,8 +86,35 @@ const ImageUpload = () => {
                     onChange={(e) => sendImage(e.target.files[0])}
                 />
             </div>
-        </div>
+        </Wrapper>
     );
 };
 
 export default ImageUpload;
+
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+const DragImage = styled.div<{ width: number; height: number }>`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: ${(props) => props.width}px;
+    height: ${(props) => props.height}px;
+    border: 2px dashed #a7c4bc;
+    margin-bottom: 16px;
+    color: #a7c4bc;
+    cursor: pointer;
+`;
+
+const InputLabel = styled.label`
+    cursor: pointer;
+    background-color: #a7c4bc;
+    color: #fff;
+    padding: 7px 30px;
+    border-radius: 15px;
+`;

@@ -1,11 +1,12 @@
 import React from "react";
+import MyPage from "../components/MyPage/MyPage";
 
-const mypage = () => {
+const myPage = () => {
     return (
         <div>
-            <h1>My page</h1>
+            <MyPage />
         </div>
     );
 };
 
-export default mypage;
+export default myPage;
