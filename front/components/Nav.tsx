@@ -10,7 +10,7 @@ const Nav = () => {
     const [open, setOpen] = useState<Boolean>(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    
+
     return (
         <nav className={navStyles.nav}>
             <ul>
@@ -39,7 +39,7 @@ const Nav = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/" passHref>
+                    <Link href="/market" passHref>
                         <a>중고마켓</a>
                     </Link>
                 </li>
@@ -54,7 +54,9 @@ const Nav = () => {
                     </Link>
                 </li>
                 <li>
-                    <li onClick={handleOpen} style={{ cursor: "pointer"}}>Sign in</li>
+                    <li onClick={handleOpen} style={{ cursor: "pointer" }}>
+                        Sign in
+                    </li>
                     <LoginOrRegisterModal
                         open={open}
                         handleClose={handleClose}

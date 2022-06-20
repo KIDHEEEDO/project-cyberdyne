@@ -15,7 +15,11 @@ from concurrent import futures
 import multiprocessing
 import threading
 
-from typing import Any, Callable, Iterable, Mapping, NewType
+from typing import (
+    Any, Dict, Tuple,
+    Callable, Iterable, Mapping,
+    NewType, Optional, Union
+)
 
 from PIL import Image
 from tqdm import tqdm
@@ -23,6 +27,25 @@ from tqdm import tqdm
 
 # typedef
 # Rect = NewType('Rect', Mapping[str, int])
+
+
+CLASS_NAME2ID_0 = {
+    '종이류': 0,
+    '플라스틱류': 1,
+    '유리병류': 2,
+    '캔류': 3,
+    '고철류': 4,
+    '의류': 5,
+    '전자제품': 6,
+    '스티로폼류': 7,
+    '도기류': 8,
+    '비닐류': 9,
+    '가구류': 10,
+    '자전거': 11,
+    '형광등': 12,
+    '페트병류': 13,
+    '나무류': 14,
+}
 
 
 class Present(object):
@@ -38,7 +61,7 @@ class Present(object):
 class SerialExecutor(object):
     '''Executor 타입을 흉내내는 직렬 코드용 더미입니다.'''
 
-    def __init__(self, max_workers: int | None = None) -> None:
+    def __init__(self, max_workers: Optional[int] = None) -> None:
         self._max_workers = 1
         self._pending = deque()
 
@@ -62,7 +85,7 @@ class SerialExecutor(object):
                 func(*args)
 
 
-def whpair(whstr: str) -> tuple[int, int]:
+def whpair(whstr: str) -> Tuple[int, int]:
     '''``WxH`` 형식 문자열을 튜플로 변환해 반환합니다.'''
     return tuple(map(int, whstr.split('x')))
 
@@ -82,8 +105,8 @@ def polygon_to_box(verts: Iterable[Mapping[str, str]]) -> Mapping[str, int]:
 
 
 async def parse_json(
-    top: str, pathname: str, dim: tuple[int, int], label_output_type: str
-) -> dict[str, int | str]:
+    top: str, pathname: str, dim: Tuple[int, int], label_output_type: str
+) -> Dict[str, Union[int, str]]:
     '''json annotation 파일을 읽어 태스크를 생성합니다.'''
     with open(pathname, 'r', encoding='utf-8') as json_in:
         label = json.load(json_in)
@@ -113,7 +136,8 @@ async def parse_json(
             box_old['y2'] = int(box_old['y2'])
 
         # .. todo:: 분류 방식을 바꿀 경우 여기를 고칩니다.
-        class_id = box_old['CLASS']
+        # class_id = box_old['CLASS']
+        class_id = CLASS_NAME2ID_0[box_old['CLASS']]
 
         if label_output_type == 'yolov5':
             task['boxes'].append(
@@ -192,7 +216,7 @@ def write_pickle(dst: str, data: Iterable[Mapping]) -> None:
         print(f'MAIN: ERROR: "{dst}" 쓰기 실패 ({why})')
 
 
-def resize_image(src: str, dst: str, dim: tuple[int, int]) -> None:
+def resize_image(src: str, dst: str, dim: Tuple[int, int]) -> None:
     try:
         if dim is None:
             return
@@ -210,7 +234,7 @@ def resize_image(src: str, dst: str, dim: tuple[int, int]) -> None:
         print(f'{_identstr()}: ERROR: "{dst}" 처리 불가 ({why})')
 
 
-def _getident() -> tuple[int, int]:
+def _getident() -> Tuple[int, int]:
     '''``(process id, thread id)``를 구합니다.'''
     return (
         multiprocessing.current_process().ident,

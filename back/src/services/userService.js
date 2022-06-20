@@ -136,9 +136,7 @@ const userService = {
     },
 
     updateProfile: async ({ userId, updateData }) => {
-        // let user = await User.findById({ user_id: userId });
-        let user = Object.values(updateData);
-        user = [user.length];
+        const user = await User.findById({ user_id: userId });
 
         if (!user) {
             throw new Error(
@@ -149,13 +147,12 @@ const userService = {
         // 기존 값과 비교해서 달라진 값만 수정
         // const toUpdate = setUtil.compareValues(updateData, user);
 
-        // user = await User.update({ user_id: userId, toUpdate });
-        return { message: "success", data: user };
+        const data = await User.update({ user_id: userId, toUpdate });
+        return { message: "success", data };
     },
 
     updatePassword: async ({ userId, password }) => {
-        // let user = await User.findById({ user_id: userId });
-        let user = [1];
+        const user = await User.findById({ user_id: userId });
 
         if (!user) {
             throw new Error(
@@ -166,8 +163,8 @@ const userService = {
         // const hashedPassword = await bcrypt.hash(password, 10);
         // const toUpdate = { password: hashedPassword };
 
-        // user = await User.update({ user_id: userId, toUpdate });
-        return { message: "success", data: user };
+        const data = await User.update({ user_id: userId, toUpdate });
+        return { message: "success", data };
     },
 
     deleteUser: async ({ userId }) => {

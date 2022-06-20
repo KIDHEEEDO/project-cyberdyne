@@ -17,7 +17,7 @@ const MyPage = () => {
         rankers: [],
     });
     const userInfo = useContext(UserStateContext);
-    const id = userInfo.user.userId;
+    const id = userInfo?.user?.userId;
 
     const getUserInfo = async () => {
         const res = await get(`users/${id}/myPage`);

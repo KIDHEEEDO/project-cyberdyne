@@ -10,10 +10,10 @@ const RecycleInfo = {
     //인공지능 분석 결과를 return
 
     //인공지능 연결 전, tests용 결과 return 랜덤
-    //const code = Math.floor(Math.random() * 15);
+    const code = Math.floor(Math.random() * 15);
 
     //tests용 결과 return -> 0:종이류
-    const code = 0;
+    //const code = 0;
     return code;
   },
 
@@ -35,7 +35,7 @@ const RecycleInfo = {
       FROM recycle_infos
       INNER JOIN recycle_categories 
       ON recycle_infos.code=recycle_categories.code
-      WHERE related_item like '%${text}%'
+      WHERE (details like '%${text}%') OR (related_item like '%${text}%')
       `
     );
 

@@ -3,13 +3,9 @@ const Point = require("../models/funcs/Point");
 const pointService = {
     addPoint: async ({ userId, route, point }) => {
         const today = new Date();
-        // const newPoint = { user_id: userId, route, point, raised_at: today };
-        // const createdNewPoint = await Point.create({ newPoint });
-        const data = {
-            route,
-            point,
-            raisedAt: today,
-        };
+        const newPoint = { user_id: userId, route, point, raised_at: today };
+        const createdNewPoint = await Point.create({ newPoint });
+        const data = { route, point, raisedAt: createdNewPoint.raised_at };
         return { message: "success", data };
     },
 

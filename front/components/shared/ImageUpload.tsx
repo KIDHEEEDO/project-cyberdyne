@@ -53,10 +53,7 @@ const ImageUpload = ({ width, height, route }: ImageUploadProps) => {
             // }
 
             if (info) {
-                localStorage.setItem(
-                    "recycleInfo",
-                    JSON.stringify(info.recycleInfo)
-                ); // 페이지 라우팅 전, localStorage에 저장하여 넘어간 페이지에서 꺼내올 예정
+                localStorage.setItem("recycleInfo", JSON.stringify(info)); // 페이지 라우팅 전, localStorage에 저장하여 넘어간 페이지에서 꺼내올 예정
                 // 용량 제한이 된다면, sessionStorage를 이용해야하는가...
             }
         } else {

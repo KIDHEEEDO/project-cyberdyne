@@ -53,6 +53,7 @@ const FooterWrapper = styled.div`
     padding: 10px 0;
     color: #c4c4c4;
     font-size: 11px;
+    width: 100%;
 `;
 
 const LogoWrapper = styled.div`
