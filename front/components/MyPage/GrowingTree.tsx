@@ -12,25 +12,26 @@ const GrowingTree = ({ point }) => {
     const [pagePointer, setPagePointer] = useState("1"); // point 구간에 따라 보여줘야하는 이미지 태그를 선택한다
 
     const searchPointer = (point: number) => {
-        if (point <= 1) {
+        if (point <= 300) {
             return;
         } // 초기값은 "1" 이며, 포인트가 깎이는 일이 없으므로, 1구간에 속하면 바로 return 해서 나온다.
 
-        if (1 < point && point <= 20) {
+        if (300 < point && point <= 1000) {
             setPagePointer("2");
-        } else if (20 < point && point <= 40) {
+        } else if (1000 < point && point <= 2500) {
             setPagePointer("3");
-        } else if (40 < point && point <= 60) {
+        } else if (2500 < point && point <= 5000) {
             setPagePointer("4");
         } else {
             setPagePointer("5");
         }
     };
 
+
     useEffect(() => {
         // user의 point를 받아 온다
         searchPointer(point);
-    }, []);
+    }, [point]);
 
     return (
         <TreeWrapper>

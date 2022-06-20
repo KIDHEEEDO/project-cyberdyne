@@ -6,7 +6,7 @@ import {
     AccordionDetails,
     Typography,
 } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+// import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const SingleBoard = () => {
     return (
@@ -23,7 +23,7 @@ const SingleBoard = () => {
                 </WriteInfo>
                 <AccordionWrapper>
                     <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
+                        // expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                     >
