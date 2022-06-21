@@ -73,6 +73,23 @@ const Post = {
     );
     return post[0];
   },
+  searchPostPaged: async ({ text, page, perPage }) => {
+    const searchedData = await sequelize.query(
+      `SELECT posts.post_id, users.user_id, posts.title, users.nickname, posts."createdAt", posts.content, posts.post_img
+      FROM posts 
+      INNER JOIN users 
+      ON posts.user_id=users.user_id 
+      WHERE (posts.title LIKE '%'||$text||'%') OR (posts.content LIKE '%'||$text||'%')
+      LIMIT $perPage
+      OFFSET (($page - 1) * $perPage)`,
+      {
+        bind: { text: text, perPage: perPage, page: page },
+        type: QueryTypes.SELECT,
+      }
+    );
+
+    return searchedData[0];
+  },
 
   update: async ({ post_id, toUpdate }) => {
     const updatedPost = await postModel.update(toUpdate, {

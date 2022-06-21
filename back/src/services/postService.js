@@ -92,6 +92,36 @@ const postService = {
     }));
     return { message: "success", data: searchedPostByPostId };
   },
+  getPostByText: async ({ text, page, perPage }) => {
+    const regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-+<>@\#$%&\\\=\(\'\"]/gi;
+    // test() ㅡ 찾는 문자열이 들어있는지 확인
+    if (regExp.test(text)) {
+      text = text.replace(regExp, ""); // 찾은 특수 문자를 제거
+    }
+    text = text.replace(" ", "");
+
+    const searchedPost = await Post.searchPostPaged({
+      text,
+      page,
+      perPage,
+    });
+
+    if (searchedPost.length === 0) {
+      const errorMessage = "게시글 존재하지 않습니다.";
+      return { errorMessage };
+    }
+    const totalPage = Math.ceil(searchedPost.length / perPage);
+    const searchedData = searchedPost.map((post) => ({
+      postId: post.post_id,
+      title: post.title,
+      content: post.content,
+      nickname: post.nickname,
+      createdAt: post.createdAt,
+      postImg: post.post_img,
+    }));
+
+    return { message: "success", data: { totalPage, searchedData } };
+  },
 
   setPost: async ({ postId, toUpdate }) => {
     const findedPost = await Post.findPostByPostId({ post_id: postId });

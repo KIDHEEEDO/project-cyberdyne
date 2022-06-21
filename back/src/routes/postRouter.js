@@ -52,6 +52,27 @@ postRouter.get("/list", async (req, res, next) => {
     next(error);
   }
 });
+postRouter.get("/search", async (req, res, next) => {
+  try {
+    const text = req.query.text;
+    const page = req.query.page || 1;
+    const perPage = req.query.perPage || 10;
+
+    const searchedPostList = await postService.getPostByText({
+      text,
+      page,
+      perPage,
+    });
+
+    if (searchedPostList.errorMessage) {
+      throw new Error(searchedPostList.errorMessage);
+    }
+
+    res.status(200).json(searchedPostList);
+  } catch (e) {
+    next(e);
+  }
+});
 //특정 사용자의 게시글 찾기
 postRouter.get("/user", async (req, res, next) => {
   try {
