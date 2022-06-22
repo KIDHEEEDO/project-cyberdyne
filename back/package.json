@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@tensorflow/tfjs-node": "^3.18.0",
     "aws-sdk": "^2.1152.0",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
