@@ -8,7 +8,8 @@ const Rank = ({ user }) => {
         <div>
             <h3>랭킹</h3>
             <p>
-                현재 {user.nickname}님은 {user.rank}위 입니다.
+                현재 {user.nickname}님은{" "}
+                {user?.rank ? `${user?.rank}위 입니다.` : `순위가 없습니다.`}
             </p>
             <div>
                 {user?.rankers.map((ranker, index) => {

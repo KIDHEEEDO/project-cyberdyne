@@ -1,14 +1,18 @@
 import React, { useState, useContext } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import Logo from "../../public/images/logo.png";
+import kakao from "../../public/images/kakao.login.png";
 import styled from "styled-components";
 import { styled as materialStyled } from "@mui/material/styles";
 import { Button, TextField } from "@mui/material";
 import { DispatchContext } from "../../pages/_app";
 import * as Api from "../../api";
+import { kakaoUrl, naverUrl } from "./socialLogin/SocialLoginUrl";
 
 function Login({ open, handleClose, setRegister }) {
     const dispatch = useContext(DispatchContext);
+    const router = useRouter();
 
     const [email, setEmail] = useState<String>("");
     const [password, setPassword] = useState<String>("");
@@ -97,19 +101,42 @@ function Login({ open, handleClose, setRegister }) {
             </SignInForm>
             <Or>or</Or>
             <FindWrapper>
-                <Button variant="text" className="">
-                    비밀번호 찾기
-                </Button>
-                <span>|</span>
-                <Button
-                    variant="text"
-                    onClick={() => {
-                        handleClose;
-                        setRegister(true);
-                    }}
-                >
-                    회원가입
-                </Button>
+                <LoginWrapper>
+                    <Button variant="text" className="">
+                        비밀번호 찾기
+                    </Button>
+                    <span>|</span>
+                    <Button
+                        variant="text"
+                        onClick={() => {
+                            handleClose;
+                            setRegister(true);
+                        }}
+                    >
+                        회원가입
+                    </Button>
+                    <span>|</span>
+                    <Button
+                        variant="text"
+                        onClick={() => {
+                            router.push(naverUrl());
+                        }}
+                    >
+                        네이버
+                    </Button>
+                </LoginWrapper>
+                <SocialLoginWrapper>
+                    <Button
+                        variant="text"
+                        className=""
+                        onClick={() => {
+                            router.push(kakaoUrl());
+                        }}
+                        style={{ borderRadius: "12px" }}
+                    >
+                        <Image alt="kakao_Login" src={kakao} />
+                    </Button>
+                </SocialLoginWrapper>
             </FindWrapper>
         </Wrapper>
     );
@@ -123,7 +150,7 @@ const Wrapper = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     width: 520px;
-    height: 550px;
+    height: 600px;
     background-color: white;
     border-radius: 20px;
     padding: 40px;
@@ -145,10 +172,11 @@ const LogoImage = styled.div`
 
 const FindWrapper = styled.div`
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     font-size: 14px;
     margin: 10px auto;
-    padding-left: 110px;
     color: var(--green);
 `;
 
@@ -190,3 +218,19 @@ const SignInButton = materialStyled(Button)(() => ({
         color: "white",
     },
 }));
+
+const LoginWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+const SocialLoginWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
+
+const kakaoButton = styled.button`
+    border-radius: 12px;
+`;

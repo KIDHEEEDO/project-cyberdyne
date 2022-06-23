@@ -2,8 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import Search from "../shared/Search";
 import SingleBoard from "./SingleBoard";
+import Write from "./Write";
 
 const MainBoard = () => {
+    const isWrite = true;
     return (
         <Wrapper>
             <Container>
@@ -13,7 +15,7 @@ const MainBoard = () => {
                     <Button>글쓰러 가기 ✏️</Button>
                 </Menu>
                 <BoardWrapper>
-                    <SingleBoard />
+                    {isWrite ? <Write /> : <SingleBoard />}
                 </BoardWrapper>
             </Container>
         </Wrapper>
@@ -23,7 +25,7 @@ const MainBoard = () => {
 export default MainBoard;
 
 const Wrapper = styled.div`
-    height: 1000px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;

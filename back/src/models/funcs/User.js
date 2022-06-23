@@ -6,15 +6,7 @@ const Op = db.Sequelize.Op;
 
 const User = {
     create: async ({ newUser }) => {
-        const createdNewUser = await userModel.create(newUser, {
-            fields: [
-                "user_id",
-                "nickname",
-                "email",
-                "password",
-                "register_date",
-            ],
-        });
+        const createdNewUser = await userModel.create(newUser);
 
         return createdNewUser;
     },

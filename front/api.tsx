@@ -12,6 +12,15 @@ async function get(endpoint, params = "") {
     });
 }
 
+async function patch(endpoint, data) {
+    return axios.patch(serverUrl + endpoint, data, {
+        // JWT 토큰을 헤더에 담아 백엔드 서버에 보냄.
+        headers: {
+            Authorization: `Bearer ${sessionStorage.getItem("userToken")}`,
+        },
+    });
+}
+
 async function post(endpoint, data) {
     // JSON.stringify 함수: Javascript 객체를 JSON 형태로 변환함.
     // 예시: {name: "Kim"} => {"name": "Kim"}
@@ -59,4 +68,4 @@ async function del(endpoint, params = "") {
 
 // 아래처럼 export한 후, import * as A 방식으로 가져오면,
 // A.get, A.post 로 쓸 수 있음.
-export { get, post, sendImageFile, put, del as delete };
+export { get, patch, post, sendImageFile, put, del as delete };
