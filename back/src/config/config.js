@@ -1,4 +1,6 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
+
 const { SQL_USERNAME, SQL_PASSWORD, SQL_DATABASE, SQL_HOST, SQL_PORT } =
   process.env;
 
@@ -11,4 +13,4 @@ const development = {
   dialect: "postgres",
 };
 
-module.exports = { development };
+export default development;

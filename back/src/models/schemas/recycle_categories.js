@@ -1,5 +1,5 @@
-const Sequelize = require("sequelize");
-module.exports = function (sequelize, DataTypes) {
+import Sequelize from "sequelize";
+export default function (sequelize, DataTypes) {
   return sequelize.define(
     "recycle_categories",
     {
@@ -27,4 +27,4 @@ module.exports = function (sequelize, DataTypes) {
       ],
     }
   );
-};
+}

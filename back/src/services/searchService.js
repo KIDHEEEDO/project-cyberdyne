@@ -1,4 +1,4 @@
-const RecycleInfo = require("../models/funcs/RecycleInfo");
+import RecycleInfo from "../models/funcs/RecycleInfo.js";
 
 const searchService = {
   //GET /search
@@ -25,4 +25,4 @@ const searchService = {
   },
 };
 
-module.exports = searchService;
+export default searchService;

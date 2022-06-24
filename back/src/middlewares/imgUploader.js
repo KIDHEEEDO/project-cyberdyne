@@ -1,8 +1,8 @@
-const AWS = require("aws-sdk");
-const multer = require("multer");
-const multerS3 = require("multer-s3");
-const path = require("path");
-const dotenv = require("dotenv");
+import AWS from "aws-sdk";
+import multer from "multer";
+import multerS3 from "multer-s3";
+import path from "path";
+import dotenv from "dotenv";
 dotenv.config();
 
 //s3 관련 정보
@@ -50,4 +50,4 @@ const uploadPostImage = multer({
   }),
 });
 
-module.exports = { uploadPostImage, uploadProfileImage };
+export { uploadPostImage, uploadProfileImage };

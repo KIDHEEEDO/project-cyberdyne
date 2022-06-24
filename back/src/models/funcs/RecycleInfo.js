@@ -1,5 +1,5 @@
-const db = require("../index.js");
-const QueryTypes = require("sequelize");
+import db from "../index.js";
+import QueryTypes from "sequelize";
 const recycleInfoModel = db.recycleInfo;
 const recycleCategoryModel = db.recycleCategory;
 const Sequelize = db.Sequelize;
@@ -56,4 +56,4 @@ const RecycleInfo = {
   },
 };
 
-module.exports = RecycleInfo;
+export default RecycleInfo;

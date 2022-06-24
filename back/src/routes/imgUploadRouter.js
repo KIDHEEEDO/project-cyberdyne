@@ -1,9 +1,11 @@
-const imgUploadRouter = require("express").Router();
-const loginRequired = require("../middlewares/loginRequired");
-const {
+import { Router } from "express";
+import loginRequired from "../middlewares/loginRequired.js";
+import {
   uploadPostImage,
   uploadProfileImage,
-} = require("../middlewares/imgUploader.js");
+} from "../middlewares/imgUploader.js";
+
+const imgUploadRouter = Router();
 
 //로그인 필요
 imgUploadRouter.use(loginRequired);
@@ -44,4 +46,4 @@ imgUploadRouter.post(
   }
 );
 
-module.exports = imgUploadRouter;
+export default imgUploadRouter;

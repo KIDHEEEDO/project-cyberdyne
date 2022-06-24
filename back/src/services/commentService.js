@@ -1,5 +1,5 @@
-const Comment = require("../models/funcs/Comment");
-const Post = require("../models/funcs/Post");
+import Comment from "../models/funcs/Comment.js";
+import Post from "../models/funcs/Post.js";
 
 const commentService = {
   //POST /comment
@@ -108,4 +108,4 @@ const commentService = {
   },
 };
 
-module.exports = commentService;
+export default commentService;

@@ -1,10 +1,12 @@
-const postRouter = require("express").Router();
-const postService = require("../services/postService");
-const loginRequired = require("../middlewares/loginRequired");
-const {
+import { Router } from "express";
+import postService from "../services/postService.js";
+import loginRequired from "../middlewares/loginRequired.js";
+import {
   validationErrorCatcher,
   postMiddleware,
-} = require("../middlewares/validationMiddleware");
+} from "../middlewares/validationMiddleware.js";
+
+const postRouter = Router();
 
 //로그인 필요
 postRouter.use(loginRequired);
@@ -182,4 +184,4 @@ postRouter.get("/:id", async (req, res, next) => {
   }
 });
 
-module.exports = postRouter;
+export default postRouter;

@@ -1,5 +1,5 @@
-const { validationResult } = require("express-validator");
-const { body } = require("express-validator");
+import { validationResult } from "express-validator";
+import { body } from "express-validator";
 
 const postMiddleware = {};
 postMiddleware.postBodyValidator = [
@@ -40,4 +40,4 @@ const validationErrorCatcher = (req, res, next) => {
   throw error;
 };
 
-module.exports = { postMiddleware, commentMiddleware, validationErrorCatcher };
+export { postMiddleware, commentMiddleware, validationErrorCatcher };

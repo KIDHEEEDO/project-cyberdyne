@@ -4,8 +4,9 @@
   "description": "\"cyberdyne backend\"",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"node tunnel-ssh.js\" \"nodemon index.js\""
+    "start": "nodemon index.js"
   },
+  "type": "module",
   "author": "",
   "license": "ISC",
   "dependencies": {

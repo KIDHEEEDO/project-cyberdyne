@@ -1,7 +1,7 @@
-const {
+import {
   STATUS_400_BADREQUEST,
   STATUS_500_INTERNALSERVERERROR,
-} = require("./status.js");
+} from "./status.js";
 
 /** 기본 `Error` 타입에 더 구체적인 정보를 담을 수 있도록 확장한 범용 에러입니다. */
 class AppError extends Error {
@@ -73,4 +73,4 @@ class RequestError extends AppError {
   }
 }
 
-module.exports = { RequestError, AppError };
+export { RequestError, AppError };

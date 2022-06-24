@@ -1,34 +1,34 @@
-const Point = require("../models/funcs/Point");
+import Point from "../models/funcs/Point.js";
 
 const pointService = {
-    addPoint: async ({ userId, route, point }) => {
-        const today = new Date();
-        const newPoint = { user_id: userId, route, point, raised_at: today };
-        const createdNewPoint = await Point.create({ newPoint });
-        const data = { route, point, raisedAt: createdNewPoint.raised_at };
-        return { message: "success", data };
-    },
+  addPoint: async ({ userId, route, point }) => {
+    const today = new Date();
+    const newPoint = { user_id: userId, route, point, raised_at: today };
+    const createdNewPoint = await Point.create({ newPoint });
+    const data = { route, point, raisedAt: createdNewPoint.raised_at };
+    return { message: "success", data };
+  },
 
-    checkPoint: async ({ userId, route }) => {
-        const today = new Date();
-        // 오늘 자정을 기준으로 필터링을 해주기 위함
-        today.setHours(0, 0, 0, 0);
-        let point = await Point.findByFilter({
-            user_id: userId,
-            route,
-            today,
-        });
+  checkPoint: async ({ userId, route }) => {
+    const today = new Date();
+    // 오늘 자정을 기준으로 필터링을 해주기 위함
+    today.setHours(0, 0, 0, 0);
+    let point = await Point.findByFilter({
+      user_id: userId,
+      route,
+      today,
+    });
 
-        point = point.length;
+    point = point.length;
 
-        return { message: "success", data: point };
-    },
+    return { message: "success", data: point };
+  },
 
-    getPoints: async ({ userId }) => {
-        const points = await Point.findAllById({ user_id: userId });
+  getPoints: async ({ userId }) => {
+    const points = await Point.findAllById({ user_id: userId });
 
-        return { message: "success", data: points };
-    },
+    return { message: "success", data: points };
+  },
 };
 
-module.exports = pointService;
+export default pointService;

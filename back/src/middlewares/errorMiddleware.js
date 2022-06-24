@@ -1,4 +1,4 @@
-const logger = require("../config/logger");
+import logger from "../config/logger.js";
 
 const errorMiddleware = (error, req, res, next) => {
   logger.error(error);
@@ -7,4 +7,4 @@ const errorMiddleware = (error, req, res, next) => {
   res.status(400).json({ message: "fail", data: error.message });
 };
 
-module.exports = errorMiddleware;
+export default errorMiddleware;

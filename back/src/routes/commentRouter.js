@@ -1,10 +1,12 @@
-const commentRouter = require("express").Router();
-const commentService = require("../services/commentService");
-const loginRequired = require("../middlewares/loginRequired");
-const {
+import { Router } from "express";
+import commentService from "../services/commentService.js";
+import loginRequired from "../middlewares/loginRequired.js";
+import {
   validationErrorCatcher,
   commentMiddleware,
-} = require("../middlewares/validationMiddleware");
+} from "../middlewares/validationMiddleware.js";
+
+const commentRouter = Router();
 
 //로그인 필요
 commentRouter.use(loginRequired);
@@ -111,4 +113,4 @@ commentRouter.get("/:id", async (req, res, next) => {
   }
 });
 
-module.exports = commentRouter;
+export default commentRouter;

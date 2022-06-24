@@ -1,4 +1,4 @@
-const Post = require("../models/funcs/Post");
+import Post from "../models/funcs/Post.js";
 
 const postService = {
   //POST /post
@@ -191,4 +191,4 @@ const postService = {
   },
 };
 
-module.exports = postService;
+export default postService;

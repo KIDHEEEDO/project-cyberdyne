@@ -1,5 +1,5 @@
-const db = require("../index.js");
-const QueryTypes = require("sequelize");
+import db from "../index.js";
+import QueryTypes from "sequelize";
 const commentModel = db.comment;
 const Sequelize = db.Sequelize;
 const sequelize = db.sequelize;
@@ -73,4 +73,4 @@ const Comment = {
   },
 };
 
-module.exports = Comment;
+export default Comment;

@@ -1,5 +1,5 @@
-const db = require("../index.js");
-const QueryTypes = require("sequelize");
+import db from "../index.js";
+import QueryTypes from "sequelize";
 const postModel = db.post;
 const Sequelize = db.Sequelize;
 const sequelize = db.sequelize;
@@ -126,4 +126,4 @@ const Post = {
   },
 };
 
-module.exports = Post;
+export default Post;
