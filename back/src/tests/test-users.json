@@ -1,0 +1,25 @@
+{
+  "update_password": {
+    "path": "{userId}/password",
+    "body": { "password": "newStrongP@ssword" }
+  },
+  "update_profile": {
+    "path": "{userId}/profile",
+    "body": { "nickname": "TestWorker" }
+  },
+  "get_mypage": {
+    "path": "{userId}/myPage"
+  },
+  "illegal_modification": {
+    "path": "{userId}/profile",
+    "path_val": "{userId}/myPage",
+    "body": {
+      "userId": "uuid-that-doesnt-exist",
+      "email": "iownu@l33thack.ers"
+    },
+    "val": {
+      "userId": "uuid-that-doesnt-exist",
+      "email": "iownu@l33thack.ers"
+    }
+  }
+}
