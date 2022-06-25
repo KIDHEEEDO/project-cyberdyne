@@ -1,7 +1,7 @@
-const app = require("./src/app");
+import app from "./src/app.js";
 // import swaggerJSDoc from "swagger-jsdoc";
 // import swaggerUi from "swagger-ui-express";
-const dotenv = require("dotenv");
+import dotenv from "dotenv";
 
 dotenv.config();
 const PORT = process.env.SERVER_PORT || 5001;

@@ -1,28 +1,48 @@
-const recycleInfoRouter = require("express").Router();
-const recycleInfoService = require("../services/recycleInfoService");
-// const { body, validationResult } = require("express-validator");
-const loginRequired = require("../middlewares/loginRequired");
+import { Router } from "express";
+import recycleInfoService from "../services/recycleInfoService.js";
 
-const multer = require("multer");
+import multer from "multer";
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
-recycleInfoRouter.use(loginRequired);
+const recycleInfoRouter = Router();
 
-//post_recycle/info: 사용자의 이미지를 분석해 분리배출 방법을 안내한다.
+//POST /recycle-info : 사용자가 등록한 이미지 분석, 분리배출 방법 안내
 recycleInfoRouter.post("/", upload.single("image"), async (req, res, next) => {
-    try {
-        const buffer = req.file.buffer;
-        //인코딩 타입 인공지능 데이터 타입따라 변경
-        const encoded = Buffer.from(buffer).toString("base64");
+  try {
+    //사용자가 등록한 이미지 정보
+    const imgBuffer = req.file.buffer;
+    //이미지 정보 전달, 분석 결과
+    const info = await recycleInfoService.analysisImg({ imgBuffer });
 
-        const info = await recycleInfoService.analysisImg({ encoded });
-        //인공지능 영역에서 디코딩 후, 분석
-        // const decode = Buffer.from(encode, "base64");
-
-        res.status(201).json(info);
-    } catch (error) {
-        next(error);
+    if (info.errorMessage) {
+      throw new Error(info.errorMessage);
     }
+
+    res.status(201).json(info);
+  } catch (error) {
+    next(error);
+  }
 });
-module.exports = recycleInfoRouter;
+
+//GET /recycle-info/?code : 분리배출 방법 검색
+recycleInfoRouter.get("/", async (req, res, next) => {
+  try {
+    //검색어를 받는다
+    const code = req.query.code;
+
+    //검색 결과
+    const info = await recycleInfoService.getInfoByCode({
+      code,
+    });
+
+    if (info.errorMessage) {
+      throw new Error(info.errorMessage);
+    }
+
+    res.status(200).json(info);
+  } catch (e) {
+    next(e);
+  }
+});
+export default recycleInfoRouter;

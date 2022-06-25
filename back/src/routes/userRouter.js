@@ -1,14 +1,16 @@
-const userRouter = require("express").Router();
-const userService = require("../services/userService");
-const { body, validationResult } = require("express-validator");
-const loginRequired = require("../middlewares/loginRequired");
+import { Router } from "express";
+import userService from "../services/userService.js";
+import { body, validationResult } from "express-validator";
+import loginRequired from "../middlewares/loginRequired.js";
+
+const userRouter = Router();
 
 userRouter.post(
     "/register",
     body("email").isEmail().withMessage("이메일 형식이 올바르지 않습니다."),
     body("password")
-        .isLength({ min: 8, max: 16 })
-        .withMessage("8 ~ 16자리 비밀번호를 입력해주세요"),
+        .isLength({ min: 8 })
+        .withMessage("비밀번호를 8자리 이상 입력해주세요"),
     async (req, res, next) => {
         try {
             const errors = validationResult(req);
@@ -45,7 +47,12 @@ userRouter.post("/login", async (req, res, next) => {
 
 userRouter.get("/:userId/myPage", loginRequired, async (req, res, next) => {
     try {
-        const userId = req.currentUserId;
+        const loginId = req.currentUserId;
+        const userId = req.params.userId;
+
+        if (loginId !== userId) {
+            throw new Error("조회 권한이 없습니다. 다시 한 번 확인해 주세요.");
+        }
 
         const userPage = await userService.getUserPage({ userId });
 
@@ -82,8 +89,8 @@ userRouter.patch(
     "/:userId/password",
     loginRequired,
     body("password")
-        .isLength({ min: 8, max: 16 })
-        .withMessage("8 ~ 16자리 비밀번호를 입력해주세요"),
+        .isLength({ min: 8 })
+        .withMessage("비밀번호를 8자리 이상 입력해주세요"),
     async (req, res, next) => {
         try {
             const errors = validationResult(req);
@@ -131,4 +138,4 @@ userRouter.delete("/:userId", loginRequired, async (req, res, next) => {
     }
 });
 
-module.exports = userRouter;
+export default userRouter;
