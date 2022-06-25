@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\tbrk8\\Desktop\\팀프로젝트\\cyberdyne\\project-cyberdyne\\back\\src\\config\\log\\.bf1e8e466adb70daf91973348b164ca017736819-audit.json",
+    "files": [
+        {
+            "date": 1655869908697,
+            "name": "C:\\Users\\tbrk8\\Desktop\\팀프로젝트\\cyberdyne\\project-cyberdyne\\back\\src\\config\\log\\2022-06-22.log",
+            "hash": "ef0e906542ffa7687d76eebe64844bd7e967e5d38c17c0a89540338e9b2ac7f1"
+        },
+        {
+            "date": 1656156289270,
+            "name": "C:\\Users\\tbrk8\\Desktop\\팀프로젝트\\cyberdyne\\project-cyberdyne\\back\\src\\config\\log\\2022-06-25.log",
+            "hash": "eabe8107bdcb8653db57b1af28f7b01bb44b30ab09bb40a1b6cb69abc7ecf9ea"
+        }
+    ],
+    "hashType": "sha256"
+}

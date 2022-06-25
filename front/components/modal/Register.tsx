@@ -6,7 +6,7 @@ import { styled as materialStyled } from '@mui/material/styles';
 import { Button, TextField } from "@mui/material";
 import * as Api from "../../api";
 
-const Register = ({ open, handleClose, setRegister }) => {
+const Register = ({ handleClose, setRegister }) => {
     const [nickname, setNickname] = useState<String>("");
     const [email, setEmail] = useState<String>("");
     const [password, setPassword] = useState<String>("");
@@ -58,7 +58,7 @@ const Register = ({ open, handleClose, setRegister }) => {
                         variant="text"
                         onClick={() => {
                             setRegister(false)
-                            handleClose
+                            handleClose()
                         }}
                     >
                         x

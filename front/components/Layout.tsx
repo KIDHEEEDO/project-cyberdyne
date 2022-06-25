@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Nav from "./Nav";
 import Footer from "./Footer";
-import Head from "next/Head";
-import styled from "styled-components";
 
 type AppLayoutProps = {
     children: React.ReactNode;
@@ -11,11 +9,7 @@ type AppLayoutProps = {
 const Layout = ({ children }: AppLayoutProps) => {
     return (
         <div>
-            <Head>
-                <title>구해줘!, 지구</title>
-                <meta name="Safe the Earth"></meta>
-                <meta content="Safe the Earth"></meta>
-            </Head>
+            <title>구해줘!, 지구</title>
             <Nav />
             <div>{children}</div>
             <Footer />

@@ -1,54 +1,82 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from "styled-components";
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import WasteInfo from "../../public/wasteInfo.json";
 
-const citys = ['서울시', '경기도']
-const districts = ['강남구', '강서구', '강동구', '관악구', '성북구'];
+interface WasteInfo {
+    region: string[];
+    name: string[];
+}
 
-export default function ControllableStates() {
-    const [city, setCity] = useState<string | null>(citys[0]);
-    const [district, setDistrict] = useState<string | null>(districts[0]);
-    const [inputCity, setInputCity] = useState('');
-    const [inputDistrict, setInputDistrict] = useState('');
+const regionData = Array.from(new Set(WasteInfo.map((data) => data.region)));
+const nameData = Array.from(new Set(WasteInfo.map((data) => data.name)));
 
+const Search = ({ mapData, handleSetMapData }) => {
+    const [region, setRegion] = useState<string | null>(null);
+    const [name, setName] = useState<string | null>(null);
+    const [inputRegion, setInputRegion] = useState('');
+    const [inputName, setInputName] = useState('');
+    const [newNameData, setNewNameData] = useState<string[]>(nameData);
+    const isRegionValid = (region === null)
+
+    useEffect(() => {
+        setRegion(null);
+        setName(null);
+    }, [mapData])
+
+    useEffect(() => {
+        const newData = WasteInfo.filter((data) => data.region === region).map((data) => data.name)
+        setNewNameData(newData)
+        setName(null);
+    }, [region])
+
+    useEffect(() => {
+        if (name) {
+            const map = WasteInfo.filter((data) => data.region === region && data.name === name)
+            handleSetMapData(map)
+        }
+    }, [name])
+    
     return (
         <Wrapper>
             <Autocomplete
-                value={city}
+                value={region}
                 onChange={(event: any, newValue: string | null) => {
-                    setCity(newValue);
+                    setRegion(newValue);
                 }}
-                inputValue={inputCity}
+                inputValue={inputRegion}
                 onInputChange={(event, newInputValue) => {
-                    setInputCity(newInputValue);
+                    setInputRegion(newInputValue);
                 }}
                 id="controllable-states-demo"
-                options={citys}
-                sx={{ width: 300 }}
+                options={regionData}
+                sx={{ width: 280 }}
                 renderInput={(params) => <TextField {...params} label="시/도" />}
             />
             <Autocomplete
-                value={district}
+                value={name}
                 onChange={(event: any, newValue: string | null) => {
-                    setDistrict(newValue);
+                    setName(newValue);
                 }}
-                inputValue={inputDistrict}
+                inputValue={inputName}
                 onInputChange={(event, newInputValue) => {
-                    setInputDistrict(newInputValue);
+                    setInputName(newInputValue);
                 }}
                 id="controllable-states-demo"
-                options={districts}
-                sx={{ width: 300 }}
-                renderInput={(params) => <TextField {...params} label="군/구" />}
+                options={newNameData}
+                sx={{ width: 280 }}
+                renderInput={(params) => <TextField {...params} label="시/군/구" />}
+                disabled={isRegionValid}
             />
         </Wrapper>
     );
 }
 
+export default Search;
 
 const Wrapper = styled.div`
-    width: 650px;
+    width: 580px;
     display: flex;
     justify-content: space-between;
 `;

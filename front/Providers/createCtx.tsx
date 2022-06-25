@@ -4,10 +4,10 @@ export default function createCtx() {
     const ctx = createContext(undefined);
 
     function useCtx() {
-    const c = useContext(ctx);
+        const c = useContext(ctx);
 
-    if (!c) {
-        throw new Error('useCtx must be inside a Provider with a value');
+        if (!c) {
+            throw new Error("useCtx must be inside a Provider with a value");
         }
 
         return c;

@@ -33,7 +33,6 @@ const MyPage = () => {
             rankers: userAll.rankers ?? "",
         });
     };
-    console.log(user.point);
 
     useEffect(() => {
         getUserInfo();

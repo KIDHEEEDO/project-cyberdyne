@@ -8,11 +8,14 @@ import styled from "styled-components";
 import { styled as materialStyled } from "@mui/material/styles";
 import { Button, TextField } from "@mui/material";
 import { DispatchContext } from "../../pages/_app";
+import { useRecoilState } from "recoil";
+import { LoginState } from "../../states/atoms";
 import * as Api from "../../api";
 import { kakaoUrl, naverUrl } from "./socialLogin/SocialLoginUrl";
 
-function Login({ open, handleClose, setRegister }) {
+function Login({ handleClose, setRegister }) {
     const dispatch = useContext(DispatchContext);
+    const [login, setLogin] = useRecoilState(LoginState);
     const router = useRouter();
 
     const [email, setEmail] = useState<String>("");
@@ -43,6 +46,7 @@ function Login({ open, handleClose, setRegister }) {
             const jwtToken = user.token;
             sessionStorage.setItem("userToken", jwtToken);
 
+            setLogin(true);
             dispatch({
                 type: "LOGIN_SUCCESS",
                 payload: user,

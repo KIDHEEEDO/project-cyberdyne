@@ -60,8 +60,7 @@ const Input = styled.input`
     width: 530px;
     height: 40px;
     border: none;
-    padding: 0;
-    outline: none;
+    outline: 2px solid #305e63;
     border-radius: 15px;
     text-align: center;
 `;
@@ -70,7 +69,8 @@ const Button = styled.button`
     width: 65px;
     margin-left: 5px;
     height: 40px;
-    border: none;
+    border: 2px solid #305e63;
     border-radius: 15px;
     cursor: pointer;
+    background-color: var(--green);
 `;

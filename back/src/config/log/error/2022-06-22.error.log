@@ -1,0 +1,56 @@
+2022-06-22 14:06:27 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:34 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:83 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:88 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:89 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:35 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:19 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:24 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:53 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:60 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:38 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:20 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:17 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:50 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:55 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:21 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:26 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:20 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:71 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:78 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:19 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:25 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:32 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:19 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:23 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:32 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 14:06:37 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 15:06:59 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 15:06:69 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 15:06:22 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 15:06:28 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 15:06:30 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 15:06:21 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 15:06:22 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 15:06:24 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 15:06:93 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 15:06:53 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 15:06:81 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 15:06:83 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 15:06:86 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 15:06:52 || [ [31merror[39m ] ▶ [31mRequest failed with status code 401[39m
+2022-06-22 15:06:23 || [ [31merror[39m ] ▶ [31mRequest failed with status code 400[39m
+2022-06-22 15:06:86 || [ [31merror[39m ] ▶ [31mRequest failed with status code 400[39m
+2022-06-22 15:06:21 || [ [31merror[39m ] ▶ [31mRequest failed with status code 400[39m
+2022-06-22 15:06:67 || [ [31merror[39m ] ▶ [31mRequest failed with status code 400[39m
+2022-06-22 15:06:21 || [ [31merror[39m ] ▶ [31mRequest failed with status code 400[39m
+2022-06-22 15:06:01 || [ [31merror[39m ] ▶ [31mconnect ECONNREFUSED 127.0.0.1:3306[39m
+2022-06-22 15:06:02 || [ [31merror[39m ] ▶ [31mconnect ECONNREFUSED 127.0.0.1:3306[39m
+2022-06-22 15:06:46 || [ [31merror[39m ] ▶ [31mconnect ECONNREFUSED 127.0.0.1:3306[39m
+2022-06-22 15:06:13 || [ [31merror[39m ] ▶ [31mconnect ECONNREFUSED 127.0.0.1:3306[39m
+2022-06-22 15:06:63 || [ [31merror[39m ] ▶ [31mRequest failed with status code 400[39m
+2022-06-22 15:06:23 || [ [31merror[39m ] ▶ [31mRequest failed with status code 400[39m
+2022-06-22 15:06:96 || [ [31merror[39m ] ▶ [31mRequest failed with status code 400[39m
+2022-06-22 15:06:20 || [ [31merror[39m ] ▶ [31mRequest failed with status code 400[39m
+2022-06-22 15:06:19 || [ [31merror[39m ] ▶ [31mRequest failed with status code 400[39m
+2022-06-22 18:06:70 || [ [31merror[39m ] ▶ [31mCannot read properties of undefined (reading 'location')[39m

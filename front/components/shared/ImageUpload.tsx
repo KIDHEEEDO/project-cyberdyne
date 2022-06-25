@@ -46,7 +46,6 @@ const ImageUpload = ({
         setIsUploaded("loading");
         const formData = new FormData();
         formData.append("image", file);
-        console.log(formData.getAll("image"));
         // console.log(formData.getAll("image")); // formData에 잘 들어가는지 확인
         if (route === "recycleInfo") {
             const res = await sendImageFile("recycle-info", formData);

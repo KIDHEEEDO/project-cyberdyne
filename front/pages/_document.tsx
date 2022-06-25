@@ -17,7 +17,9 @@ export default class MyDocument extends Document {
             ctx.renderPage = () =>
                 originalRenderPage({
                     enhanceApp: (App) => (props) =>
-                        sheet.collectStyles(materialSheets.collect(<App {...props} />)),
+                        sheet.collectStyles(
+                            materialSheets.collect(<App {...props} />)
+                        ),
                 });
             const initialProps = await Document.getInitialProps(ctx);
 
@@ -39,10 +41,8 @@ export default class MyDocument extends Document {
         return (
             <Html lang="ko">
                 <Head>
-                    {/* <meta
-                        name="viewport"
-                        content="width=device-width, initial-scale=1"
-                    /> */}
+                    <meta name="Safe the Earth"></meta>
+                    <meta content="Safe the Earth"></meta>
                     <meta charSet="utf-8" />
                     <link
                         href="https://font.elice.io/EliceDigitalBaeum.css"

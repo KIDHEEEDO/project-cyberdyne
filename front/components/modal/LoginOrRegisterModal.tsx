@@ -6,33 +6,38 @@ import Modal from '@mui/material/Modal';
 const LoginOrRegisterModal = ({ open, handleClose }) => {
     const [register, setRegister] = useState<Boolean>(false);
 
+    const Wrapper = React.forwardRef((props: any, ref: any) => (
+        <span {...props} ref={ref}>
+            {props.children}
+        </span>
+    ));
+
     return (
-        open && (
-            <Modal
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-            >
-                {
-                    register ? (
+        <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+        >
+            {
+                register ? (
+                    <Wrapper>
                         <Register
-                            open={open}
-                            setRegister={setRegister}
                             handleClose={handleClose}
+                            setRegister={setRegister}
                         />
-                    ) : (
+                    </Wrapper>
+                ) : (
+                    <Wrapper>
                         <Login
-                            open={open}
-                            setRegister={setRegister}
                             handleClose={handleClose}
+                            setRegister={setRegister}
                         />
-                    )
-                }
-            </Modal>
-        )
+                    </Wrapper>
+                )
+            }
+        </Modal>
     )
 }
 
 export default LoginOrRegisterModal;
-
