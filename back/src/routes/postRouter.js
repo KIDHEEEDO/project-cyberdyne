@@ -8,12 +8,11 @@ import {
 
 const postRouter = Router();
 
-//로그인 필요
-postRouter.use(loginRequired);
-
 //POST /post: 게시글 추가
+//로그인 필요
 postRouter.post(
   "/",
+  loginRequired,
   postMiddleware.postBodyValidator,
   validationErrorCatcher,
   async (req, res, next) => {
@@ -42,8 +41,10 @@ postRouter.post(
 );
 
 //PUT /post/:id: 게시글 수정
+//로그인 필요
 postRouter.put(
   "/:id",
+  loginRequired,
   postMiddleware.putBodyValidator,
   validationErrorCatcher,
   async (req, res, next) => {
@@ -74,7 +75,8 @@ postRouter.put(
 );
 
 //DELETE /post/:id: 게시글 삭제
-postRouter.delete("/:id", async (req, res, next) => {
+//로그인 필요
+postRouter.delete("/:id", loginRequired, async (req, res, next) => {
   try {
     //삭제할 게시글 id
     const postId = req.params.id;
@@ -148,7 +150,7 @@ postRouter.get("/search", async (req, res, next) => {
   }
 });
 //GET /post/user: 특정 사용자 게시글 리스트
-postRouter.get("/user", async (req, res, next) => {
+postRouter.get("/user", loginRequired, async (req, res, next) => {
   try {
     //사용자 정보
     const userId = req.currentUserId;
@@ -164,7 +166,7 @@ postRouter.get("/user", async (req, res, next) => {
   }
 });
 //GET /post/:id: 특정 게시글 정보
-postRouter.get("/:id", async (req, res, next) => {
+postRouter.get("/:id", loginRequired, async (req, res, next) => {
   try {
     //게시글 id
     const postId = req.params.id;
