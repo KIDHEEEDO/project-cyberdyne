@@ -52,7 +52,6 @@ const postService = {
       updatedAt,
       postImg: post_img,
     };
-
     return { message: "success", data: updatedPost };
   },
 
@@ -96,7 +95,6 @@ const postService = {
   getAllPostPaged: async ({ page, perPage }) => {
     //전체 게시글 리스트 (pagination 적용)
     const listedPost = await Post.findAllPostPaged({ page, perPage });
-
     //pagination적용된, 게시글 리스트 전체 페이지
     const totalPage = await Post.findAllPostTotalPage({ perPage });
 
@@ -107,6 +105,8 @@ const postService = {
       title: post.title,
       content: post.content,
       nickname: post.nickname,
+      userId: post.user_id,
+      userImg: post.picture,
       createdAt: post.createdAt,
       postImg: post.post_img,
     }));
@@ -129,7 +129,6 @@ const postService = {
       page,
       perPage,
     });
-
     //pagination적용된, 검색 게시글 리스트 전체 페이지
     const totalPage = Math.ceil(searchedPost.length / perPage);
     //게시글 리스트
@@ -139,6 +138,8 @@ const postService = {
       title: post.title,
       content: post.content,
       nickname: post.nickname,
+      userId: post.user_id,
+      userImg: post.picture,
       createdAt: post.createdAt,
       postImg: post.post_img,
     }));
@@ -156,9 +157,11 @@ const postService = {
     //전달 데이터 형태 변경
     const searchedPostById = listedPost.map((post) => ({
       postId: post.post_id,
-      userId: post.user_id,
       title: post.title,
+      content: post.content,
       nickname: post.nickname,
+      userId: post.user_id,
+      userImg: post.picture,
       createdAt: post.createdAt,
       postImg: post.post_img,
     }));
@@ -180,9 +183,11 @@ const postService = {
     //전달 데이터 형태 변경
     const searchedPostByPostId = {
       postId: findedPost.post_id,
-      userId: findedPost.user_id,
       title: findedPost.title,
+      content: findedPost.content,
       nickname: findedPost.nickname,
+      userId: findedPost.user_id,
+      userImg: findedPost.picture,
       createdAt: findedPost.createdAt,
       postImg: findedPost.post_img,
     };

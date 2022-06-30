@@ -15,6 +15,7 @@ recycleInfoRouter.post(
     try {
       //사용자가 등록한 이미지 정보
       const imgBuffer = req.file.buffer;
+
       //이미지 정보 전달, 분석 결과
       const info = await recycleInfoService.analysisImg({ imgBuffer });
 

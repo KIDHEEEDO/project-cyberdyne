@@ -315,7 +315,7 @@ class GarbageDetector {
     }
     let image_;
     try {
-      image_ = tf.node.decodeImage(image);
+      image_ = tf.node.decodeImage(image, 3);
     } catch (error) {
       throw new AppError(
         {

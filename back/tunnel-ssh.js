@@ -2,7 +2,6 @@
 //const pg = require("pg");
 import pkg from "pg";
 const { Client } = pkg;
-// import { Client } from "pg";
 import tunnel from "tunnel-ssh";
 import dotenv from "dotenv";
 
