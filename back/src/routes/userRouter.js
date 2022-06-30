@@ -45,6 +45,18 @@ userRouter.post("/login", async (req, res, next) => {
     }
 });
 
+userRouter.get("/current", loginRequired, async (req, res, next) => {
+    try {
+        const loginId = req.currentUserId;
+
+        const user = await userService.getUserInfo({ userId: loginId });
+
+        res.status(200).json(user);
+    } catch (error) {
+        next(error);
+    }
+});
+
 userRouter.get("/:userId/myPage", loginRequired, async (req, res, next) => {
     try {
         const loginId = req.currentUserId;

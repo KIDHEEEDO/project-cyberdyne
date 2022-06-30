@@ -6,7 +6,7 @@ import { performance, PerformanceObserver } from "perf_hooks";
 import url from "url";
 
 import { AppError } from "../utils/errors.js";
-import { GarbageDetector } from "../utils/od/garbageDetector.mjs";
+import { GarbageDetector, MODELDIR } from "../utils/od/garbageDetector.mjs";
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const obs = new PerformanceObserver((items) => {
@@ -53,7 +53,8 @@ const main = async () => {
       `utils/od/gdmodel/weights/last_saved_model`
     );
     console.info(`model's absolute path is "${modelPath}"`);
-    detector = new GarbageDetector(modelPath);
+    // detector = new GarbageDetector(modelPath);
+    detector = new GarbageDetector(MODELDIR);
     await detector.init();
     console.info(detector);
     result[`Model loading test`] = true;

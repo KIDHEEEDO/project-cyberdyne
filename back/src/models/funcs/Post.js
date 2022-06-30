@@ -35,7 +35,7 @@ const Post = {
   //전체 게시글 리스트 (pagination 없음)
   findAllPost: async () => {
     const postlist = await sequelize.query(
-      `SELECT posts.post_id, posts.title, posts."createdAt", users.nickname, posts.post_img
+      `SELECT posts.post_id, posts.title, posts."createdAt", users.nickname, users.picture, posts.post_img
       FROM posts 
       INNER JOIN users 
       ON posts.user_id=users.user_id 
@@ -47,7 +47,7 @@ const Post = {
   //게시글 리스트 전체 페이지
   findAllPostPaged: async ({ page, perPage }) => {
     const postlist = await sequelize.query(
-      `SELECT posts.post_id, posts.title, posts.content, users.nickname, posts."createdAt", posts.post_img
+      `SELECT posts.post_id, posts.title, posts.content, users.user_id, users.nickname, users.picture, posts."createdAt", posts.post_img
       FROM posts 
       INNER JOIN users 
       ON posts.user_id=users.user_id 
@@ -74,7 +74,7 @@ const Post = {
   //게시글 검색
   searchPostPaged: async ({ text, page, perPage }) => {
     const searchedData = await sequelize.query(
-      `SELECT posts.post_id, users.user_id, posts.title, users.nickname, posts."createdAt", posts.content, posts.post_img
+      `SELECT posts.post_id, posts.title, posts.content, users.user_id, users.nickname, users.picture, posts."createdAt", posts.post_img
       FROM posts 
       INNER JOIN users 
       ON posts.user_id=users.user_id 
@@ -86,14 +86,13 @@ const Post = {
         type: QueryTypes.SELECT,
       }
     );
-
     return searchedData[0];
   },
   //GET /post/user
   //특정 사용자 게시글 리스트
   findPostByUserId: async ({ user_id }) => {
     const post = await sequelize.query(
-      `SELECT posts.post_id, users.user_id, posts.title, users.nickname, posts."createdAt", posts.content, posts.post_img
+      `SELECT posts.post_id, posts.title, posts.content, users.user_id, users.nickname, users.picture, posts."createdAt", posts.post_img
       FROM posts 
       INNER JOIN users 
       ON posts.user_id=users.user_id 
@@ -112,7 +111,7 @@ const Post = {
   //특정 게시글 정보
   findPostByPostId: async ({ post_id }) => {
     const post = await sequelize.query(
-      `SELECT posts.post_id, users.user_id, posts.title, users.nickname, posts."createdAt", posts.content, posts.post_img
+      `SELECT posts.post_id, posts.title, posts.content, users.user_id, users.nickname, users.picture, posts."createdAt", posts.post_img
       FROM posts 
       INNER JOIN users 
       ON posts.user_id=users.user_id 

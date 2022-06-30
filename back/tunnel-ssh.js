@@ -1,6 +1,7 @@
 // tunnel-ssh.js
 //const pg = require("pg");
-import { Client } from "pg";
+import pkg from "pg";
+const { Client } = pkg;
 import tunnel from "tunnel-ssh";
 import dotenv from "dotenv";
 
