@@ -23,6 +23,10 @@ async function get(endpoint, params = "") {
     });
 }
 
+async function getRecycleInfo(endpoint, data) {
+    return axios.post(serverUrl + endpoint, data);
+}
+
 async function getQuary(endpoint, { params = {} }) {
     return axios.get(serverUrl + endpoint, {
         params,
@@ -61,8 +65,16 @@ async function post(endpoint, data) {
 async function sendImageFile(endpoint: string, formData) {
     return axios.post(serverUrl + endpoint, formData, {
         headers: {
-            Authorization: `Bearer ${sessionStorage.getItem("userToken")}`,
             "content-type": "multipart/form-data",
+        },
+    });
+}
+
+async function sendProfileFile(endpoint: string, formData) {
+    return axios.post(serverUrl + endpoint, formData, {
+        headers: {
+            "content-type": "multipart/form-data",
+            Authorization: `Bearer ${sessionStorage.getItem("userToken")}`,
         },
     });
 }
@@ -95,10 +107,12 @@ async function del(endpoint, params = "") {
 export {
     get,
     getQuary,
+    getRecycleInfo,
     patch,
     post,
     getPost,
     sendImageFile,
+    sendProfileFile,
     put,
     del as delete,
 };

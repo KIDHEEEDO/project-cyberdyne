@@ -1,49 +1,46 @@
-import React, { useState, useReducer, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import nextArrow from "../../public/images/next.arrow.png";
 import pointCoin from "../../public/images/point.coin.png";
-import styled from "styled-components";
-import { findList } from "./findList";
 import Loading from "../shared/Loading";
+import styled from "styled-components";
+import InfoCard from "./InfoCard";
+import Pagination from "./Pagination";
+import { getRecycleInfo } from "../../api";
 
-const InfoCarousel = ({ info }) => {
-    const [slideIndex, setSlideIndex] = useState(1);
+const matchType = [
+    "종이류",
+    "플라스틱류",
+    "유리병",
+    "캔류",
+    "고철류",
+    "의류",
+    "전자제품",
+    "스티로폼",
+    "도기류",
+    "비닐류",
+    "가구",
+    "자전거",
+    "형광등",
+    "페트병류",
+    "나무류",
+];
+
+const InfoCarousel = ({ info, route }) => {
+    const [showList, setShowList] = useState([]);
     const router = useRouter(); // 페이지 이동을 위해 useRouter 적용
+    const [targetPage, setTargetPage] = useState(0);
 
-    const [totalInfo, dispatch] = useReducer(findList, {
-        type: null,
-        infoList: null,
-    });
-
-    const uploadData = () => {
-        if (router.query.route) {
-            dispatch({
-                route: "SEARCH",
-                infos: JSON.parse(localStorage.getItem("searchInfo")),
-            });
-        } else {
-            dispatch({
-                route: "IMAGE",
-                infos: JSON.parse(localStorage.getItem("recycleInfo")),
-            });
-        }
+    // route === "ImageSearch", findInfo function
+    const getInfo = async (uniqueCodeArr) => {
+        const res = await getRecycleInfo(`recycle-info/search`, {
+            code: uniqueCodeArr,
+        });
+        const searchList = res.data.data;
+        setShowList(searchList);
     };
 
-    const nextSlide = () => {
-        if (slideIndex === totalInfo.infoList.length) {
-            return;
-        }
-        setSlideIndex(slideIndex + 1);
-    };
-
-    const prevSlide = () => {
-        if (slideIndex === 1) {
-            return;
-        }
-        setSlideIndex(slideIndex - 1);
-    };
-
+    // Row buttons go ahead deferent page
     const rendPage = (e: React.MouseEvent<HTMLButtonElement>) => {
         router.push(`/${(e.target as HTMLButtonElement).name}`);
     };
@@ -52,87 +49,95 @@ const InfoCarousel = ({ info }) => {
         // get 기존 포인트 -> put 추가한 포인트
     };
     useEffect(() => {
-        uploadData();
-    }, []); // 페이지 오면 바로 데이터 가져옴. 그러나 변환 시간에 따라서, 그 사이는 Loading 으로 보여준다
+        if (route === "ImageSearch") {
+            const codeList = new Set(info.map((code) => code.code));
+            const uniqueCodeArr = Array.from(codeList);
+            getInfo(uniqueCodeArr);
+        }
+    }, []);
 
-    return totalInfo.type !== null ? (
-        <Wrapper>
-            <MainTitle>
-                <h2>&apos;{totalInfo.type}&apos;</h2>
-                <h3> (으)로 분리수거 해주세요!</h3>
-            </MainTitle>
-            <p>
-                &apos;{totalInfo.type}&apos;(은)는{" "}
-                {totalInfo.infoList.map((sub) => sub.details + " / ")}(이)가
-                있습니다.
-            </p>
-            <CarouselWrapper>
-                <ArrowButton type="button" onClick={prevSlide}>
-                    <PrevArrow
-                        src={nextArrow}
-                        alt="prev arrow"
-                        width={35}
-                        height={35}
+    return route === "ImageSearch" ? (
+        showList.length !== 0 ? (
+            <>
+                <Wrapper>
+                    <Pagination
+                        totalPages={showList?.length}
+                        setTargetPage={setTargetPage}
                     />
-                </ArrowButton>
-                <CarouselAll>
-                    {totalInfo.infoList.map((info, idx) => {
-                        return (
-                            <Slider
-                                key={`page-${idx}`}
-                                className={
-                                    slideIndex === idx + 1
-                                        ? "is_active"
-                                        : "is_pass"
-                                }
-                            >
-                                <InfoBox>
-                                    <Image
-                                        src={info.infoImg}
-                                        alt="recycle-information"
-                                        width={400}
-                                        height={500}
+                    {showList.map((content, index) => (
+                        <div key={`info-${index}`}>
+                            {index === targetPage && (
+                                <>
+                                    <MainTitle>
+                                        <h2>
+                                            &apos;{matchType[content.code]}
+                                            &apos;
+                                        </h2>
+                                        <h3> (으)로 분리수거 해주세요!</h3>
+                                    </MainTitle>
+
+                                    <InfoCard
+                                        key={`card-${index}`}
+                                        cards={content.recycleInfo}
+                                        route={route}
                                     />
-                                </InfoBox>
-                                <div>
-                                    <span>
-                                        {idx + 1} / {totalInfo.infoList.length}
-                                    </span>
-                                </div>
-                            </Slider>
-                        );
-                    })}
-                </CarouselAll>
-
-                <ArrowButton type="button" onClick={nextSlide}>
-                    <Image
-                        src={nextArrow}
-                        alt="next arrow"
-                        width={35}
-                        height={35}
-                    />
-                </ArrowButton>
-            </CarouselWrapper>
-            <ButtonWrapper>
-                <Button type="button" name="waste" onClick={rendPage}>
-                    대형폐기물 신고하기
-                </Button>
-                <Button type="button" name="market" onClick={rendPage}>
-                    중고마켓으로 가기
-                </Button>
-                <PointButton type="button" onClick={getPoint}>
-                    <Image
-                        src={pointCoin}
-                        alt="point coin"
-                        width={35}
-                        height={35}
-                    />
-                    <p>포인트 적립하기</p>
-                </PointButton>
-            </ButtonWrapper>
-        </Wrapper>
+                                </>
+                            )}
+                        </div>
+                    ))}
+                    <ButtonWrapper>
+                        <Button type="button" name="waste" onClick={rendPage}>
+                            대형폐기물 신고하기
+                        </Button>
+                        <Button type="button" name="market" onClick={rendPage}>
+                            중고마켓으로 가기
+                        </Button>
+                        <PointButton type="button" onClick={getPoint}>
+                            <Image
+                                src={pointCoin}
+                                alt="point coin"
+                                width={35}
+                                height={35}
+                            />
+                            <p>포인트 적립하기</p>
+                        </PointButton>
+                    </ButtonWrapper>
+                </Wrapper>
+            </>
+        ) : (
+            <NoResult>
+                아쉽습니다! <br />
+                결과가 나오지 않았습니다.
+                <br />
+                다시 한번 도전 해보시겠어요 ?
+            </NoResult>
+        )
     ) : (
-        <Loading />
+        <>
+            <Wrapper>
+                <>
+                    <InfoCard cards={info.recycleInfo} route={route} />
+                </>
+
+                <ButtonWrapper>
+                    <Button type="button" name="waste" onClick={rendPage}>
+                        대형폐기물 신고하기
+                    </Button>
+                    <Button type="button" name="market" onClick={rendPage}>
+                        중고마켓으로 가기
+                    </Button>
+                    <PointButton type="button" onClick={getPoint}>
+                        <Image
+                            src={pointCoin}
+                            alt="point coin"
+                            width={35}
+                            height={35}
+                        />
+                        <p>포인트 적립하기</p>
+                    </PointButton>
+                </ButtonWrapper>
+            </Wrapper>
+        </>
     );
 };
 
@@ -145,69 +150,32 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    border-left: 2px dashed #a7c4bc;
 `;
 
 const MainTitle = styled.div`
     display: flex;
+    justify-content: center;
     align-items: flex-end;
 `;
-const CarouselWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    height: 800px;
-`;
-const CarouselAll = styled.div`
-    width: 500px;
-    height: 500px;
-    border-radius: 15px;
-    margin: 8px 8px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
 
-    word-break: keep-all;
-`;
-const Slider = styled.div`
-    width: 500px;
-    height: 500px;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    &.is_pass {
-        opacity: 0;
-        transition: opacity ease-in-out 0.01s;
-    }
-    &.is_active {
-        opacity: 1;
-    }
-`;
-const InfoBox = styled.div`
-    height: 80%;
-`;
-const ArrowButton = styled.button`
-    border: none;
-    height: 30px;
-    cursor: pointer;
-`;
-const PrevArrow = styled(Image)`
-    transform: scaleX(-1);
-`;
 const ButtonWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 18px 0;
 `;
 const Button = styled.button`
     border: none;
     cursor: pointer;
     width: 150px;
     height: 50px;
-    margin: 18px 6px;
+    margin: 10px 6px;
     background-color: #dedede;
     border-radius: 15px;
     word-break: keep-all;
+    font-family: Elice Digital Baeum;
+    font-weight: bold;
 `;
 const PointButton = styled.button`
     display: flex;
@@ -221,4 +189,19 @@ const PointButton = styled.button`
     justify-content: center;
     align-items: center;
     word-break: keep-all;
+    font-family: Elice Digital Baeum;
+    font-weight: bold;
+`;
+
+const NoResult = styled.div`
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #a7c4bc;
+    font-size: 25px;
+    font-weight: bold;
+    color: red;
 `;
