@@ -55,7 +55,6 @@ const recycleInfoService = {
 
     //검색 결과
     const infos = await RecycleInfo.findInfoByCode({ code });
-
     //안내될 정보 페이지 수
     const page = infos.length;
     //전달 데이터 형태 변경

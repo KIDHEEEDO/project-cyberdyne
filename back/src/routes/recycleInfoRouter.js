@@ -30,7 +30,7 @@ recycleInfoRouter.post(
 );
 
 // GET /recycle-info/img: 분석 결과(코드)에 따른 분리배출 방법
-recycleInfoRouter.get("/img", async (req, res, next) => {
+recycleInfoRouter.post("/search", async (req, res, next) => {
   try {
     //검색어를 받는다
     const code = req.body.code;
