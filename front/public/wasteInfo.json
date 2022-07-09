@@ -1,0 +1,506 @@
+[
+     {
+  "region": "서울",
+  "name": "종로구",
+  "url1": "https:\/\/www.jongno.go.kr\/portalMain.do#",
+  "url2": "https:\/\/www.jongno.go.kr\/bigclean\/",
+  "banner_image": "https:\/\/www.jongno.go.kr\/portal\/open_content\/images\/2016new\/common\/jongno_logo.gif",
+  "tel": "02-2148-1114",
+  "address": "서울 종로구 종로1길 36"
+ },
+ {
+  "region": "서울",
+  "name": "중구",
+  "url1": "http:\/\/www.junggu.seoul.kr\/main.do",
+  "url2": "http:\/\/www.junggu.seoul.kr\/content.do?cmsid=14192",
+  "banner_image": "http:\/\/www.junggu.seoul.kr\/images\/main\/logo_main.png",
+  "tel": "02-3396-4114",
+  "address": "서울 중구 창경궁로 17"
+ },
+ {
+  "region": "서울",
+  "name": "용산구",
+  "url1": "https:\/\/www.yongsan.go.kr\/portal\/main\/main.do",
+  "url2": "https:\/\/www.yongsan.go.kr\/portal\/main\/contents.do?menuNo=200672",
+  "banner_image": "https:\/\/www.yongsan.go.kr\/static\/portal\/img\/main\/logo_m_svg.svg",
+  "tel": "02-2199-6114",
+  "address": "서울 용산구 녹사평대로 150"
+ },
+ {
+  "region": "서울",
+  "name": "성동구",
+  "url1": "https:\/\/www.sd.go.kr\/main\/index.do",
+  "url2": "https:\/\/www.sd.go.kr\/main\/contents.do?key=1670&",
+  "banner_image": "https:\/\/www.sd.go.kr\/site\/main\/images\/common\/svg_logo.svg",
+  "tel": "02-2286-5114",
+  "address": "서울 성동구 고산자로 270"
+ },
+ {
+  "region": "서울",
+  "name": "광진구",
+  "url1": "https:\/\/www.gwangjin.go.kr\/portal\/main\/main.do",
+  "url2": "https:\/\/www.gwangjin.go.kr\/bigclean\/bigWeb\/main\/viewMain.do",
+  "banner_image": "https:\/\/www.gwangjin.go.kr\/static\/portal\/img\/common\/logo.jpg",
+  "tel": "02-450-1114",
+  "address": "서울 광진구 자양로 117"
+ },
+ {
+  "region": "서울",
+  "name": "동대문구",
+  "url1": "https:\/\/www.ddm.go.kr\/www\/index.do",
+  "url2": "https:\/\/www.yeogiro24.co.kr\/web\/emissions_area.html",
+  "banner_image": "https:\/\/www.ddm.go.kr\/common\/images\/layout\/logo.png",
+  "tel": "02-2127-4114",
+  "address": "서울 동대문구 천호대로 145"
+ },
+ {
+  "region": "서울",
+  "name": "중랑구",
+  "url1": "https:\/\/www.jungnang.go.kr\/portal\/main.do",
+  "url2": "https:\/\/www.the-cleanjungnang.com\/main\/",
+  "banner_image": "https:\/\/www.jungnang.go.kr\/portal\/resources\/img\/common\/main_logo.png",
+  "tel": "02-2094-0114",
+  "address": "서울 중랑구 봉화산로 179"
+ },
+ {
+  "region": "서울",
+  "name": "성북구",
+  "url1": "https:\/\/www.sb.go.kr\/main\/mainPage.do",
+  "url2": "https:\/\/smartclean.sb.go.kr\/",
+  "banner_image": "https:\/\/www.sb.go.kr\/commons\/\/main\/images\/global\/title3.jpg",
+  "tel": "02-2241-3114",
+  "address": "서울 성북구 보문로 168"
+ },
+ {
+  "region": "서울",
+  "name": "강북구",
+  "url1": "https:\/\/www.gangbuk.go.kr\/www\/index.do",
+  "url2": "https:\/\/www.gangbuk.go.kr\/merge\/contents.do?key=8136",
+  "banner_image": "https:\/\/www.gangbuk.go.kr\/www\/images\/common\/logo.png",
+  "tel": "02-901-6114",
+  "address": "서울 강북구 도봉로89길 13"
+ },
+ {
+  "region": "서울",
+  "name": "도봉구",
+  "url1": "https:\/\/www.dobong.go.kr\/",
+  "url2": "https:\/\/www.dobong.go.kr\/subsite\/waste\/Contents.asp?code=10007383",
+  "banner_image": "https:\/\/www.dobong.go.kr\/images\/common_2020\/h_logo.png",
+  "tel": "02-2091-2120",
+  "address": "서울 도봉구 마들로 656"
+ },
+ {
+  "region": "서울",
+  "name": "노원구",
+  "url1": "https:\/\/www.nowon.kr\/www\/index.do",
+  "url2": "https:\/\/smartclean.nowon.kr\/",
+  "banner_image": "https:\/\/www.nowon.kr\/resources\/www\/images\/common\/logo.png",
+  "tel": "02-2116-3114",
+  "address": "서울 노원구 노해로 437"
+ },
+ {
+  "region": "서울",
+  "name": "은평구",
+  "url1": "https:\/\/www.ep.go.kr\/www\/index.do",
+  "url2": "https:\/\/ai-waste.ep.go.kr\/",
+  "banner_image": "https:\/\/www.ep.go.kr\/site\/www\/images\/sprite\/logo_sprite.png",
+  "tel": "02-351-6114",
+  "address": "서울 은평구 은평로 195"
+ },
+ {
+  "region": "서울",
+  "name": "서대문구",
+  "url1": "https:\/\/www.sdm.go.kr\/index.do",
+  "url2": "https:\/\/www.sdm.go.kr\/civil\/print\/waste\/procedures.do",
+  "banner_image": "https:\/\/www.sdm.go.kr\/lib\/new2019\/images\/common\/img_logo.png",
+  "tel": "02-330-1114",
+  "address": "서울 서대문구 연희로 248"
+ },
+ {
+  "region": "서울",
+  "name": "마포구",
+  "url1": "https:\/\/www.mapo.go.kr\/site\/main\/home",
+  "url2": "https:\/\/www.mapo.go.kr\/CmsWeb\/bigclean\/index.jsp",
+  "banner_image": "https:\/\/www.mapo.go.kr\/design\/common\/images\/common\/ico_logo_main.png",
+  "tel": "02-3153-8114",
+  "address": "서울 마포구 월드컵로 212"
+ },
+ {
+  "region": "서울",
+  "name": "양천구",
+  "url1": "https:\/\/www.yangcheon.go.kr\/site\/yangcheon\/main.do",
+  "url2": "https:\/\/www.yangcheon.go.kr\/site\/yangcheon\/05\/10504010100002016081013.jsp",
+  "banner_image": "https:\/\/www.yangcheon.go.kr\/images\/yangcheon\/common\/new_logo_2019_3.jpg",
+  "tel": "02-2620-3114",
+  "address": "서울 양천구 목동동로 105"
+ },
+ {
+  "region": "서울",
+  "name": "강서구",
+  "url1": "https:\/\/www.gangseo.seoul.kr\/index",
+  "url2": "https:\/\/www.gangseo.seoul.kr\/gs010206",
+  "banner_image": "https:\/\/www.gangseo.seoul.kr\/humanframe\/theme\/global\/assets\/image\/common\/img_logo.png",
+  "tel": "02-2600-6114",
+  "address": "서울 강서구 화곡로 302"
+ },
+ {
+  "region": "서울",
+  "name": "구로구",
+  "url1": "https:\/\/www.guro.go.kr\/www\/index.do",
+  "url2": "https:\/\/www.guro.go.kr\/www\/infoExhaust.do?key=2649&#n",
+  "banner_image": "https:\/\/www.guro.go.kr\/common\/images\/layout\/logo.png",
+  "tel": "02-860-2114",
+  "address": "서울 구로구 가마산로 245"
+ },
+ {
+  "region": "서울",
+  "name": "금천구",
+  "url1": "https:\/\/www.geumcheon.go.kr\/portal\/index.do",
+  "url2": "https:\/\/www.geumcheon.go.kr\/portal\/contents.do?key=549",
+  "banner_image": "https:\/\/www.geumcheon.go.kr\/site\/portal\/images\/common\/logo.png",
+  "tel": "02-2627-2114",
+  "address": "서울 금천구 시흥대로73길 70"
+ },
+ {
+  "region": "서울",
+  "name": "영등포구",
+  "url1": "https:\/\/www.ydp.go.kr\/www\/index.do",
+  "url2": "https:\/\/www.ydp.go.kr\/reserve\/wsteExhstReqstWebForm.do?key=5495&",
+  "banner_image": "https:\/\/www.ydp.go.kr\/site\/www\/images\/common\/logo.png",
+  "tel": "02-2670-3114",
+  "address": "서울 영등포구 당산로 123"
+ },
+ {
+  "region": "서울",
+  "name": "동작구",
+  "url1": "https:\/\/www.dongjak.go.kr\/portal\/main\/main.do",
+  "url2": "https:\/\/smartclean.dongjak.go.kr\/?menuNo=200735",
+  "banner_image": "https:\/\/www.dongjak.go.kr\/static\/portal\/img2019\/logo23.png",
+  "tel": "02-820-1114",
+  "address": "서울 동작구 장승배기로 161"
+ },
+ {
+  "region": "서울",
+  "name": "관악구",
+  "url1": "https:\/\/www.gwanak.go.kr\/site\/gwanak\/main.do",
+  "url2": "https:\/\/www.gwanak.go.kr\/site\/gwanak\/07\/10703010500002016051206.jsp",
+  "banner_image": "https:\/\/www.gwanak.go.kr\/images\/gwanak\/common_2020\/logo.png",
+  "tel": "02-879-5000",
+  "address": "서울 관악구 관악로 145"
+ },
+ {
+  "region": "서울",
+  "name": "서초구",
+  "url1": "https:\/\/www.seocho.go.kr\/site\/seocho\/main.do",
+  "url2": "https:\/\/www.seocho.go.kr\/site\/seocho\/01\/10103070301002018030701.jsp",
+  "banner_image": "https:\/\/www.seocho.go.kr\/images\/seocho_2019\/main\/logo.png",
+  "tel": "02-2155-6114",
+  "address": "서울 서초구 남부순환로 2584"
+ },
+ {
+  "region": "서울",
+  "name": "강남구",
+  "url1": "https:\/\/www.gangnam.go.kr\/main.do",
+  "url2": "https:\/\/www.gangnam.go.kr\/waste\/apply\/info.do?mid=ID03_020704",
+  "banner_image": "https:\/\/www.gangnam.go.kr\/upload\/preview\/2022\/05\/31\/f5158e05-5db5-4719-8b3c-117bbe0afdf3.jpg",
+  "tel": "02-3423-5114",
+  "address": "서울 강남구 학동로 426"
+ },
+ {
+  "region": "서울",
+  "name": "송파구",
+  "url1": "https:\/\/www.songpa.go.kr\/www\/index.do",
+  "url2": "https:\/\/www.15990903.or.kr\/portal\/main\/main.do",
+  "banner_image": "https:\/\/www.songpa.go.kr\/common\/images\/layout\/logo.svg",
+  "tel": "02-2147-2000",
+  "address": "서울 송파구 올림픽로 326"
+ },
+ {
+  "region": "서울",
+  "name": "강동구",
+  "url1": "https:\/\/www.gangdong.go.kr\/web\/newportal\/main",
+  "url2": "https:\/\/www.gangdong.go.kr\/web\/newportal\/largeWaste\/apply\/step1",
+  "banner_image": "https:\/\/www.gangdong.go.kr\/design\/theme\/portal\/images\/common\/logo.gif",
+  "tel": "02-1577-1188",
+  "address": "서울 강동구 성내로 25"
+ },
+ {
+  "region": "경기도",
+  "name": "가평군",
+  "url1": "https:\/\/www.gp.go.kr\/portal\/index.do",
+  "url2": "https:\/\/clean.gp.go.kr\/",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_03.png",
+  "tel": "031-580-2114",
+  "address": "경기 가평군 가평읍 석봉로 181"
+ },
+ {
+  "region": "경기도",
+  "name": "고양시",
+  "url1": "http:\/\/www.goyang.go.kr\/www\/index.do",
+  "url2": "https:\/\/clean.gys.or.kr\/",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_05.png",
+  "tel": "031-909-9000",
+  "address": "경기 고양시 덕양구 고양시청로 10"
+ },
+ {
+  "region": "경기도",
+  "name": "과천시",
+  "url1": "https:\/\/www.gccity.go.kr\/main.do",
+  "url2": "https:\/\/www.gccity.go.kr\/dept\/contents.do?mId=0604000000",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_09.png",
+  "tel": "02-3677-2114",
+  "address": "경기 과천시 관문로 69"
+ },
+ {
+  "region": "경기도",
+  "name": "광명시",
+  "url1": "https:\/\/www.gm.go.kr\/pt\/index.do",
+  "url2": "https:\/\/www.gm.go.kr\/pt\/partInfo\/en\/cleaning\/biggarbage\/PTMN223.jsp",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_10.png",
+  "tel": "1688-3399",
+  "address": "경기 광명시 시청로 20"
+ },
+ {
+  "region": "경기도",
+  "name": "광주시",
+  "url1": "https:\/\/www.gjcity.go.kr\/main.do",
+  "url2": "https:\/\/www.gjcity.go.kr\/portal\/contents.do?mId=0408090100",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_13.png",
+  "tel": "031-760-2000",
+  "address": "경기 광주시 행정타운로 50"
+ },
+ {
+  "region": "경기도",
+  "name": "구리시",
+  "url1": "https:\/\/www.guri.go.kr\/www\/index.do",
+  "url2": "https:\/\/www.guri.go.kr\/www\/contents.do?key=767",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_14.png",
+  "tel": "031-557-1010",
+  "address": "경기 구리시 아차산로 439"
+ },
+ {
+  "region": "경기도",
+  "name": "군포시",
+  "url1": "https:\/\/www.gunpo.go.kr\/www\/index.do",
+  "url2": "https:\/\/www.gunpo.go.kr\/waste\/index.do",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/city17.png",
+  "tel": "031-392-3000",
+  "address": "경기 군포시 청백리길 6"
+ },
+ {
+  "region": "경기도",
+  "name": "김포시",
+  "url1": "https:\/\/www.gimpo.go.kr\/portal\/index.do",
+  "url2": "https:\/\/www.gimpo.go.kr\/portal\/contents.do?key=1437",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_22.png",
+  "tel": "031-980-2114",
+  "address": "경기 김포시 사우중로 1"
+ },
+ {
+  "region": "경기도",
+  "name": "남양주시",
+  "url1": "https:\/\/www.nyj.go.kr\/main\/1",
+  "url2": "https:\/\/cleancity.nyj.go.kr\/",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_18.png",
+  "tel": "031-590-2114",
+  "address": "경기 남양주시 경춘로 1037"
+ },
+ {
+  "region": "경기도",
+  "name": "동두천시",
+  "url1": "https:\/\/www.ddc.go.kr\/ddc\/index.do",
+  "url2": "https:\/\/www.ddc.go.kr\/ddc\/contents.do?key=1875",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_21.png",
+  "tel": "031-860-2114",
+  "address": "경기 동두천시 방죽로 23"
+ },
+ {
+  "region": "경기도",
+  "name": "부천시",
+  "url1": "http:\/\/www.bucheon.go.kr\/site\/main\/index148",
+  "url2": "https:\/\/clean.bucheon.go.kr\/site\/main\/home",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_26.png",
+  "tel": "031-320-3000",
+  "address": "경기 부천시 길주로 210"
+ },
+ {
+  "region": "경기도",
+  "name": "성남시",
+  "url1": "https:\/\/www.seongnam.go.kr\/main.do?",
+  "url2": "https:\/\/waste.isdc.co.kr\/main\/index.php",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_25.png",
+  "tel": "1577-3100",
+  "address": "경기 성남시 중원구 성남대로 997"
+ },
+ {
+  "region": "경기도",
+  "name": "수원시",
+  "url1": "https:\/\/www.suwon.go.kr\/index.do",
+  "url2": "https:\/\/www.suwon.go.kr\/sw-www\/deptHome\/dep_env\/env_03\/env_03_11\/env_03_06_02.jsp",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_29.png",
+  "tel": "1899-3300",
+  "address": "경기 수원시 팔달구 효원로 241"
+ },
+ {
+  "region": "경기도",
+  "name": "시흥시",
+  "url1": "http:\/\/www.siheung.go.kr\/main.do",
+  "url2": "https:\/\/www.siheung.go.kr\/portal\/waste\/main.do",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_30.png",
+  "tel": "031-310-2114",
+  "address": "경기 시흥시 시청로 20"
+ },
+ {
+  "region": "경기도",
+  "name": "안산시",
+  "url1": "https:\/\/www.ansan.go.kr\/www\/main\/main.do",
+  "url2": "https:\/\/www.ansan.go.kr\/www\/common\/cntnts\/selectContents.do?cntnts_id=C0001350",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_33.png",
+  "tel": "031-557-1010",
+  "address": "경기 안산시 단원구 화랑로 387"
+ },
+ {
+  "region": "경기도",
+  "name": "안성시",
+  "url1": "https:\/\/www.anseong.go.kr\/main.do",
+  "url2": "https:\/\/www.anseong.go.kr\/depart\/contents.do?mId=0701050000",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_34.png",
+  "tel": "031-678-2114",
+  "address": "경기 안성시 시청길 25"
+ },
+ {
+  "region": "경기도",
+  "name": "안양시",
+  "url1": "https:\/\/www.anyang.go.kr\/main\/index.do",
+  "url2": "https:\/\/www.anyang.go.kr\/main\/contents.do?key=807",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_37.png",
+  "tel": "031-8045-7000",
+  "address": "경기 안양시 동안구 시민대로 235"
+ },
+ {
+  "region": "경기도",
+  "name": "양주시",
+  "url1": "https:\/\/www.yangju.go.kr\/www\/index.do",
+  "url2": "https:\/\/www.yangju.go.kr\/www\/contents.do?key=693",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_38.png",
+  "tel": "031-8082-4114",
+  "address": "경기 양주시 부흥로 1533"
+ },
+ {
+  "region": "경기도",
+  "name": "양평군",
+  "url1": "https:\/\/www.yp21.go.kr\/www\/index.do",
+  "url2": "https:\/\/www.yp21.go.kr\/waste\/contents.do?key=2755",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_41.png",
+  "tel": "031-773-5101",
+  "address": "경기 양평군 양평읍 군청앞길 2"
+ },
+ {
+  "region": "경기도",
+  "name": "여주시",
+  "url1": "https:\/\/www.yeoju.go.kr\/main\/yj",
+  "url2": "https:\/\/www.yeoju.go.kr\/waste\/index.do",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_42.png",
+  "tel": "031-887-2114",
+  "address": "경기 여주시 세종로 1"
+ },
+ {
+  "region": "경기도",
+  "name": "연천군",
+  "url1": "https:\/\/www.yeoncheon.go.kr\/www\/index.do",
+  "url2": "https:\/\/www.yeoncheon.go.kr\/www\/contents.do?key=3502",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_45.png",
+  "tel": "031-839-2114",
+  "address": "경기 연천군 연천읍 연천로 220"
+ },
+ {
+  "region": "경기도",
+  "name": "오산시",
+  "url1": "https:\/\/www.osan.go.kr\/main.do",
+  "url2": "https:\/\/www.osan.go.kr\/depart\/contents.do?mId=0601010000",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_46.png",
+  "tel": "031-8036-8036",
+  "address": "경기 오산시 성호대로 141"
+ },
+ {
+  "region": "경기도",
+  "name": "용인시",
+  "url1": "https:\/\/www.yongin.go.kr\/index.do",
+  "url2": "https:\/\/www.yongin.go.kr\/home\/www\/www12\/www12_03\/www12_03_02\/www12_03_02_01.jsp",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_49.png",
+  "tel": "031-324-2114",
+  "address": "경기 용인시 처인구 중부대로 1199"
+ },
+ {
+  "region": "경기도",
+  "name": "의왕시",
+  "url1": "https:\/\/www.uiwang.go.kr\/index",
+  "url2": "https:\/\/www.uiwang.go.kr\/UWKORENV0312",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_50.png",
+  "tel": "031-345-2114",
+  "address": "경기 의왕시 시청로 11"
+ },
+ {
+  "region": "경기도",
+  "name": "의정부시",
+  "url1": "https:\/\/www.ui4u.go.kr\/main.do",
+  "url2": "https:\/\/www.siseol.or.kr\/link?param1=facility2&param2=facility2_c07&param3=facility2_c07_m01&param4=list",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_53.png",
+  "tel": "031-828-2114",
+  "address": "경기 의정부시 시민로 1"
+ },
+ {
+  "region": "경기도",
+  "name": "이천시",
+  "url1": "https:\/\/www.icheon.go.kr\/portal\/index.do",
+  "url2": "https:\/\/www.icheon.go.kr\/depart\/contents.do?key=4183",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_54.png",
+  "tel": "031-644-2000",
+  "address": "경기 이천시 부악로 40"
+ },
+ {
+  "region": "경기도",
+  "name": "파주시",
+  "url1": "https:\/\/www.paju.go.kr\/index.do",
+  "url2": "https:\/\/www.paju.go.kr\/www\/www_02\/environment\/environment_05\/environment_05_01\/environment_05_01_04.jsp",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_57.png",
+  "tel": "031-940-4114",
+  "address": "경기 파주시 시청로 50"
+ },
+ {
+  "region": "경기도",
+  "name": "평택시",
+  "url1": "https:\/\/www.pyeongtaek.go.kr\/main.do",
+  "url2": "https:\/\/www.pyeongtaek.go.kr\/waste\/main.do",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_58.png",
+  "tel": "031-8024-5000",
+  "address": "경기 평택시 경기대로 245"
+ },
+ {
+  "region": "경기도",
+  "name": "포천시",
+  "url1": "https:\/\/www.pocheon.go.kr\/www\/index.do",
+  "url2": "https:\/\/www.pocheon.go.kr\/pyegi\/index.do",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_61.png",
+  "tel": "031-538-2114",
+  "address": "경기 포천시 중앙로 87"
+ },
+ {
+  "region": "경기도",
+  "name": "하남시",
+  "url1": "https:\/\/www.hanam.go.kr\/www\/index.do",
+  "url2": "https:\/\/www.hanam.go.kr\/www\/contents.do?key=6422",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_62.jpg",
+  "tel": "031-790-6114",
+  "address": "경기 하남시 대청로 10"
+ },
+ {
+  "region": "경기도",
+  "name": "화성시",
+  "url1": "https:\/\/www.hscity.go.kr\/www\/index.do",
+  "url2": "https:\/\/waste.hscity.go.kr\/Waste\/index.jsp",
+  "banner_image": "https:\/\/www.gg.go.kr\/uploads\/CONTENTS\/site\/gg\/%EC%8B%9C%EA%B5%B0%EB%B3%84%EC%A1%B0%EC%A7%81%EB%8F%84_65.png",
+  "tel": "1577-4200",
+  "address": "경기 화성시 남양읍 시청로 159"
+ }
+]

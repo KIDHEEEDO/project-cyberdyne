@@ -1,0 +1,34 @@
+:root {
+    --green: #a7c4bc;
+    --gray: #f2f2f2;
+    --deepgreen: #305e63;
+    --deepgray: #dedede;
+
+    --font-title: 2rem;
+    --font-subtitle: 1.2rem;
+    --font-text: 1rem;
+
+    --nav-height: 60px;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Elice Digital Baeum, -apple-system, BlinkMacSystemFont,
+        Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+        Helvetica Neue, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}

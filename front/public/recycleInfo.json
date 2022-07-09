@@ -1,0 +1,25 @@
+[
+    { "category": "종이류", "details": "신문지" },
+    { "category": "종이류", "details": "책자, 노트" },
+    { "category": "종이류", "details": "상자류" },
+    { "category": "종이류", "details": "종이컵" },
+    { "category": "종이류", "details": "종이팩" },
+    { "category": "플라스틱류", "details": "플라스틱 용기" },
+    { "category": "유리병", "details": "음료수병, 기타병류" },
+    { "category": "캔류", "details": "음료주류캔, 식료품캔" },
+    { "category": "캔류", "details": "기타캔류 (부탄가스, 살충제용기 등)" },
+    { "category": "고철류", "details": "고철, 비철금속" },
+    {
+        "category": "의류",
+        "details": "면의류, 기타의류, 동식물성 섬유, 합성섬유류"
+    },
+    { "category": "전자제품", "details": "폐가전제품 (대형, 소형)" },
+    { "category": "스티로폼", "details": "스티로폼 완충재" },
+    { "category": "도기류", "details": "불연성 폐기물" },
+    { "category": "비닐류", "details": "비닐포장재, 1회용비닐봉투" },
+    { "category": "가구", "details": "대형폐기물" },
+    { "category": "자전거", "details": "폐자전거" },
+    { "category": "형광등", "details": "폐형광등" },
+    { "category": "페트병류", "details": "폐트병" },
+    { "category": "나무류", "details": "나무 원료 폐기물" }
+]
