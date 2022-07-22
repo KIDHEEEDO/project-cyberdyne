@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { UserStateContext } from "../../pages/_app";
-import { get, post, deleteComment, put } from "../../api";
+import { get, post, deleteItem } from "../../api";
 import { DispatchContext } from "../../pages/_app";
 import styled from "styled-components";
 import { styled as materialStyled } from "@mui/material/styles";
@@ -8,7 +8,7 @@ import { Box, TextField, Typography } from "@mui/material";
 
 const DeleteButton = ({ commentId, setSucDelete }) => {
     const deleteCmt = async () => {
-        const res = await deleteComment(`comment/${commentId}`);
+        const res = await deleteItem(`comment/${commentId}`);
         setSucDelete((cur) => !cur);
     };
     return (

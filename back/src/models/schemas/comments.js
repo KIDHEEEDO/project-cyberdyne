@@ -17,6 +17,7 @@ export default function (sequelize, DataTypes) {
           model: "posts",
           key: "post_id",
         },
+        onDelete: "CASCADE",
       },
       content: {
         type: DataTypes.STRING,

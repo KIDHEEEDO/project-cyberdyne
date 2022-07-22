@@ -1,22 +1,26 @@
 import React from "react";
 import Nav from "./Nav";
+import { useRouter } from "next/router";
 import Footer from "./Footer";
 import styled from "styled-components";
 import Fab from "@mui/material/Fab";
 import { ToastContainer } from "react-toastify";
 import { styled as materialStyled } from "@mui/material/styles";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 type AppLayoutProps = {
     children: React.ReactNode;
 };
 
 const Layout = ({ children }: AppLayoutProps) => {
+    const router = useRouter();
+    const path = router.pathname.slice(1);
+
     return (
         <div>
             <title>구해줘!, 지구</title>
             <Nav />
-            <BodyWrapper>
+            <BodyWrapper id="scrollableDiv">
                 <ToastContainer autoClose={3000} />
                 {children}
                 <FaButton
@@ -27,7 +31,7 @@ const Layout = ({ children }: AppLayoutProps) => {
                     👆
                 </FaButton>
             </BodyWrapper>
-            <Footer />
+            {path !== "market" ? <Footer /> : ""}
         </div>
     );
 };

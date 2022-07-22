@@ -175,7 +175,12 @@ export default function Write({
                 <Button color="success" onClick={() => uploadPost(imgList)}>
                     완료
                 </Button>
-                <Button color="cancle">취소</Button>
+                <Button
+                    color="cancle"
+                    onClick={() => setIsWrite((cur) => !cur)}
+                >
+                    취소
+                </Button>
             </ButtonWrapper>
         </Wrapper>
     );
@@ -191,7 +196,7 @@ const Wrapper = styled.div`
 `;
 const ImgUploadContainer = styled.div`
     display: flex;
-    height: 100%;
+    height: auto;
     flex-direction: column;
     align-items: center;
     min-height: auto;
@@ -259,8 +264,7 @@ const InputWrapper = styled.div`
 
 const WriteWrapper = styled.div`
     width: 100%;
-    height: 470px;
-    overflow: hidden;
+    height: 40vh;
     overflow-y: scroll;
     position: relative;
     @media screen and (max-width: 500px) {

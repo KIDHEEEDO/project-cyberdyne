@@ -109,6 +109,7 @@ const postService = {
       userImg: post.picture,
       createdAt: post.createdAt,
       postImg: post.post_img,
+      commentCnt: post.comment_cnt,
     }));
 
     return { message: "success", data: { totalPage, postList } };

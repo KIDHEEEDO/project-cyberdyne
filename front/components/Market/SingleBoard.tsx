@@ -1,7 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import footerLogo from "../../public/images/footer.logo.png";
+import { deleteItem } from "../../api";
 import Comment from "./Comment";
-
+import { UserStateContext } from "../../pages/_app";
 import styled from "styled-components";
 import { styled as materialStyled } from "@mui/material/styles";
 import {
@@ -16,9 +17,10 @@ import {
     MobileStepper,
     Box,
 } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
+import { toast } from "react-toastify";
 import IconButton, { IconButtonProps } from "@mui/material/IconButton";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import { useTheme } from "@mui/material/styles";
@@ -44,9 +46,20 @@ const SingleBoard = ({ item }) => {
     const [expanded, setExpanded] = useState(false);
     const [slideIndex, setSlideIndex] = useState(0);
     const [activeStep, setActiveStep] = useState(0);
+    const userInfo = useContext(UserStateContext);
     const maxSteps = item?.postImg?.length ?? 0; // 자료의 총 길이
     const viewContainerRef = useRef<HTMLDivElement>(null);
     const theme = useTheme();
+
+    const isDeleted = async () => {
+        try {
+            await deleteItem(`post/${item?.postId}`);
+            toast.success("삭제가 완료되었습니다.");
+            location.reload();
+        } catch (e) {
+            toast.error("다시 시도해주세요!");
+        }
+    };
 
     const handleExpandClick = () => {
         setExpanded(!expanded);
@@ -164,11 +177,23 @@ const SingleBoard = ({ item }) => {
                 <PostBody ref={viewContainerRef} />
 
                 <CardWriterContainer
-                    avatar={<Avatar alt="userProfile" src={item.userImg} />}
+                    avatar={<Avatar alt="userProfile" src={item?.userImg} />}
                     action={
-                        <IconButton aria-label="settings">
-                            <MoreVertIcon />
-                        </IconButton>
+                        <div>
+                            {item?.userId === userInfo.user?.userId && (
+                                <IconButton
+                                    aria-label="deletes"
+                                    style={{
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        position: "relative",
+                                    }}
+                                    onClick={isDeleted}
+                                >
+                                    <DeleteIcon />
+                                </IconButton>
+                            )}
+                        </div>
                     }
                     title={item?.nickname}
                     subheader={item?.createdAt?.slice(0, 10)}
@@ -178,6 +203,7 @@ const SingleBoard = ({ item }) => {
                 <CommentTitle variant="body2" color="text.secondary">
                     <span>댓글</span>
                 </CommentTitle>
+                <CmtCnt>{item?.commentCnt}</CmtCnt>
                 <ExpandMore
                     expand={expanded}
                     onClick={handleExpandClick}
@@ -208,8 +234,7 @@ const SingleBoard = ({ item }) => {
 export default SingleBoard;
 
 const Wrapper = styled.div`
-    width: 100%;
-    max-width: 400px;
+    width: 80vw;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -297,7 +322,21 @@ const CommentTitle = materialStyled(Typography)(() => ({
     fontWeight: "bold",
     paddingLeft: "10px",
     color: "#305e63",
+    display: "flex",
 }));
+
+const CmtCnt = styled.div`
+    font-size: 13px;
+    width: 18px;
+    height: 18px;
+    line-height: 15px;
+    text-align: center;
+    border: 1px solid #a7c4bc;
+    border-radius: 100%;
+    margin-left: 5px;
+    color: white;
+    background-color: #305e63;
+`;
 
 const CardMain = materialStyled(Card)(() => ({
     minHeight: "270px",

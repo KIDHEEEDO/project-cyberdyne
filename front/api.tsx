@@ -121,5 +121,5 @@ export {
     sendProfileFile,
     sendPostImageFile,
     put,
-    del as deleteComment,
+    del as deleteItem,
 };

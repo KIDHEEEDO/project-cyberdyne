@@ -11,7 +11,7 @@ const ListComponent = ({ loadMore, board, hasMore }) => {
         <InfiniteScroll
             dataLength={board.length} // 반복되는 컴포넌트 갯수
             next={loadMore}
-            height={600}
+            height="65vh"
             hasMore={hasMore}
             loader={<h3> Loading...</h3>}
             endMessage={<h4>콘텐츠가 더 이상 없습니다.</h4>}
@@ -20,7 +20,7 @@ const ListComponent = ({ loadMore, board, hasMore }) => {
             {board.map((i, index) => (
                 <div
                     style={{
-                        overflow: "auto",
+                        overflow: "inherit",
                         position: "relative",
                     }}
                     key={index}
@@ -64,12 +64,7 @@ const MainBoard = ({ firstBoards }) => {
 
     return (
         <Wrapper>
-            <h1>ECO 마켓 🌍</h1>
-            <Contents>
-                &quot;멀쩡한데... 중고로 팔아볼까..?&quot;
-                <br /> 누군가에겐 정말 필요한 물건이 될 수 있어요! <br />
-                다시쓰고 나눠쓰며 지구를 아껴보아요
-            </Contents>
+            <h1 style={{ height: "3vh" }}>ECO 마켓 🌍</h1>
             <Container>
                 <Menu>
                     {userInfo?.user ? (
@@ -108,13 +103,13 @@ export default MainBoard;
 
 const Wrapper = styled.div`
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: var(--gray);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    padding-top: 100px;
+    padding-top: 120px;
 `;
 
 const Contents = styled.p`
@@ -125,15 +120,10 @@ const Contents = styled.p`
 
 const Container = styled.div`
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-`;
-
-const Title = styled.h1`
-    width: 100%;
-    text-align: center;
 `;
 
 const Menu = styled.div`
@@ -143,6 +133,7 @@ const Menu = styled.div`
     justify-content: center;
     align-items: center;
     margin: 30px 0 10px 0;
+    height: 3vh;
 `;
 
 const Button = styled.button`
@@ -150,19 +141,19 @@ const Button = styled.button`
     font-weight: bold;
     font-size: 16px;
     color: white;
-    width: 100%;
-    height: 40px;
+    width: 80vw;
+    height: 5vh;
     border: none;
     border-radius: 15px;
     cursor: pointer;
-    margin: 30px 0;
+    margin: 20px 0;
+    padding: 5px 0;
     background-color: var(--deepgreen);
 `;
 
 const BoardWrapper = styled.div`
     width: 100%;
     height: 100%;
-    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;

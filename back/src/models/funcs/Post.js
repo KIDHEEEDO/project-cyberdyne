@@ -47,13 +47,14 @@ const Post = {
   //게시글 리스트 전체 페이지
   findAllPostPaged: async ({ page, perPage }) => {
     const postlist = await sequelize.query(
-      `SELECT posts.post_id, posts.title, posts.content, users.user_id, users.nickname, users.picture, posts."createdAt", posts.post_img
-      FROM posts 
-      INNER JOIN users 
-      ON posts.user_id=users.user_id 
-      ORDER BY posts."createdAt" desc
-      LIMIT $perPage
-      OFFSET (($page - 1) * $perPage)`,
+      `SELECT posts.post_id, posts.title, posts.content, users.user_id, users.nickname, users.picture, posts."createdAt", posts.post_img,
+      (SELECT count(*) FROM "comments" WHERE comments.post_id = posts.post_id) AS comment_cnt
+            FROM posts 
+            INNER JOIN users 
+            ON posts.user_id=users.user_id 
+            ORDER BY posts."createdAt" desc
+            LIMIT $perPage
+            OFFSET (($page - 1) * $perPage)`,
       {
         bind: { perPage: perPage, page: page },
         type: QueryTypes.SELECT,
